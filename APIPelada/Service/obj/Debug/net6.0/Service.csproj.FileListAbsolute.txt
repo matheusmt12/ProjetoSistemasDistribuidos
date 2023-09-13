@@ -1,0 +1,15 @@
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\APIPelada\Service\bin\Debug\net6.0\Service.deps.json
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\APIPelada\Service\bin\Debug\net6.0\Service.dll
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\APIPelada\Service\bin\Debug\net6.0\Service.pdb
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\APIPelada\Service\bin\Debug\net6.0\Core.dll
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\APIPelada\Service\bin\Debug\net6.0\Core.pdb
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\APIPelada\Service\obj\Debug\net6.0\Service.csproj.AssemblyReference.cache
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\APIPelada\Service\obj\Debug\net6.0\Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\APIPelada\Service\obj\Debug\net6.0\Service.AssemblyInfoInputs.cache
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\APIPelada\Service\obj\Debug\net6.0\Service.AssemblyInfo.cs
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\APIPelada\Service\obj\Debug\net6.0\Service.csproj.CoreCompileInputs.cache
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\APIPelada\Service\obj\Debug\net6.0\Service.csproj.CopyComplete
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\APIPelada\Service\obj\Debug\net6.0\Service.dll
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\APIPelada\Service\obj\Debug\net6.0\refint\Service.dll
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\APIPelada\Service\obj\Debug\net6.0\Service.pdb
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\APIPelada\Service\obj\Debug\net6.0\ref\Service.dll

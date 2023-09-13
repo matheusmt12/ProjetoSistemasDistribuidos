@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.EntrarPartida"
+             Title="EntrarPartida">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+
+
+            <Label Text="Informe Seu nome e sua posição" />
+
+            <Entry Placeholder="Informe Seu nome e Sobrenome"
+                   x:Name="NomeIforme"
+                   />
+            <Picker Title="Selecione a sua posição" 
+                    >
+                <Picker.Items>
+                    <x:String>Gol</x:String>
+                    <x:String>Linha</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Código da pelada" />
+            <Entry Placeholder="Código da pelada gerada por quem criou ela"
+                   x:Name="CodigoPelada"
+                   />
+
+            <Button Text="Enviar info" 
+                    x:Name="btnEnviar"
+                    Clicked="EnviarInfo"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
