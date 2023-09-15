@@ -23,28 +23,46 @@ namespace MauiApp1
 
         }
 
-
+        HttpClientHandler handler = new HttpClientHandler();
         public async Task<string> GetDadosAPI()
         {
-            HttpClientHandler handler = new HttpClientHandler();    
 
-            var response = await _httpClient.GetAsync("api/Pelada/1");
-                if (response.IsSuccessStatusCode)
-                {
-                    string apiresult = await response.Content.ReadAsStringAsync();
-                    var dados = JsonConvert.DeserializeObject<DadosApi>(apiresult);
-                return dados.Data.ToString();
+
+            var response = await _httpClient.GetAsync($"api/Pelada/{5}");
+            if (response.IsSuccessStatusCode)
+            {
+                string apiresult = await response.Content.ReadAsStringAsync();
+                var dados = JsonConvert.DeserializeObject<DadosApi>(apiresult);
+                Console.WriteLine(dados);
+                return dados.Nome;
             }
             return $"Erro retorno";
 
 
+        }
+
+        public async Task<string> PostDados(DadosApi dadosApi)
+        {
+
+            var jsonDados = Newtonsoft.Json.JsonConvert.SerializeObject(dadosApi);
+            var content = new StringContent(jsonDados, System.Text.Encoding.UTF8, "application/json");
+
+            var response = await _httpClient.PostAsync("api/pelada", content);
+            if (response.IsSuccessStatusCode)
+            {
+                string resposta = await response.Content.ReadAsStringAsync();
+                return resposta;
+            }
+            else
+            {
+                return "erro";
+            }
         }
     }
 }
 
 public class DadosApi
 {
-    public int idPelada { get; set; }
     public string Nome { get; set; }
     public DateTime Data { get; set; }
     public string CodigoPelada { get; set; }

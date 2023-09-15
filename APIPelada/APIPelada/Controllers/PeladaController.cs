@@ -51,7 +51,7 @@ namespace APIPelada.Controllers
             }
             var pelada = _mapper.Map<Peladum>(model);
             await _pelada.Create(pelada);
-            return Ok();
+            return Ok("Sucesso");
 
         }
 

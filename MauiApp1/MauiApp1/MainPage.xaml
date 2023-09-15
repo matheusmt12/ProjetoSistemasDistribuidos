@@ -21,7 +21,9 @@
                     x:Name="btnTeste"
                     Clicked="Teste"
                     />
-            <Button Text="Criar Pelada" />
+            <Button Text="Criar Pelada"
+                    x:Name="btnCriarPartida"
+                    Clicked="CriarPartida"/>
 
             <Button Text="Sair" />
 

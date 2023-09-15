@@ -22,6 +22,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = MauiApp1.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
+[C:/Users/mathe/OneDrive/Área de Trabalho/T. SD/Projeto Disciplina/MauiApp1/MauiApp1/CriarPartida.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MauiApp1.CriarPartida.xaml
+build_metadata.AdditionalFiles.TargetPath = CriarPartida.xaml
+build_metadata.AdditionalFiles.RelativePath = CriarPartida.xaml
+
 [C:/Users/mathe/OneDrive/Área de Trabalho/T. SD/Projeto Disciplina/MauiApp1/MauiApp1/EntrarPartida.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MauiApp1.EntrarPartida.xaml
