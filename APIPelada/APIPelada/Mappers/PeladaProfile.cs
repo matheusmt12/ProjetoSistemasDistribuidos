@@ -1,8 +1,6 @@
 ﻿using APIPelada.Model;
 using AutoMapper;
 using Core;
-using Core.Service;
-using Service;
 
 namespace APIPelada.Mappers
 {
