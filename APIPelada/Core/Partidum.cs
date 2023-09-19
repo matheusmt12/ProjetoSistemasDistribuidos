@@ -11,7 +11,9 @@ namespace Core
         public string PlacarTimeCasa { get; set; }
         public string PlacarTimeFora { get; set; }
         public int TimeIdTime { get; set; }
+        public int PeladaIdPelada { get; set; }
 
+        public virtual Peladum PeladaIdPeladaNavigation { get; set; }
         public virtual Time TimeIdTimeNavigation { get; set; }
     }
 }

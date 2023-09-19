@@ -691,6 +691,9 @@
     <AppxPackagedFile Include="C:\Users\mathe\.nuget\packages\microsoft.windowsappsdk\1.2.221209.1\runtimes\win10-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll">
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\MauiApp1\BuscarApi\bin\Debug\net6.0\BuscarApi.dll">
+      <PackagePath>BuscarApi.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\MauiApp1\MauiApp1\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\MauiApp1.deps.json">
       <PackagePath>MauiApp1.deps.json</PackagePath>
     </AppxPackagedFile>

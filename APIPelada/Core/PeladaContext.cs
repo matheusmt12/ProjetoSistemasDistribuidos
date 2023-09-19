@@ -18,6 +18,7 @@ namespace Core
         }
 
         public virtual DbSet<Jogador> Jogadors { get; set; }
+        public virtual DbSet<Listajogador> Listajogadors { get; set; }
         public virtual DbSet<Partidum> Partida { get; set; }
         public virtual DbSet<Peladum> Pelada { get; set; }
         public virtual DbSet<Time> Times { get; set; }
@@ -26,7 +27,7 @@ namespace Core
         {
             if (!optionsBuilder.IsConfigured)
             {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseMySQL("server=localhost;port=3306;user=root;password=123456;database=Pelada");
             }
         }
@@ -61,6 +62,38 @@ namespace Core
                     .HasConstraintName("fk_Jogadores_Time");
             });
 
+            modelBuilder.Entity<Listajogador>(entity =>
+            {
+                entity.HasKey(e => e.IdListaJogador)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("listajogador");
+
+                entity.HasIndex(e => e.PeladaIdPelada, "fk_ListaJogador_Pelada1_idx");
+
+                entity.Property(e => e.IdListaJogador).HasColumnName("idListaJogador");
+
+                entity.Property(e => e.CodigoTorneio)
+                    .IsRequired()
+                    .HasMaxLength(45);
+
+                entity.Property(e => e.NomeJogador)
+                    .IsRequired()
+                    .HasMaxLength(45);
+
+                entity.Property(e => e.PeladaIdPelada).HasColumnName("Pelada_idPelada");
+
+                entity.Property(e => e.PosicaoJogador)
+                    .IsRequired()
+                    .HasMaxLength(45);
+
+                entity.HasOne(d => d.PeladaIdPeladaNavigation)
+                    .WithMany(p => p.Listajogadors)
+                    .HasForeignKey(d => d.PeladaIdPelada)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_ListaJogador_Pelada1");
+            });
+
             modelBuilder.Entity<Partidum>(entity =>
             {
                 entity.HasKey(e => e.IdPartida)
@@ -68,15 +101,25 @@ namespace Core
 
                 entity.ToTable("partida");
 
+                entity.HasIndex(e => e.PeladaIdPelada, "fk_Partida_Pelada1_idx");
+
                 entity.HasIndex(e => e.TimeIdTime, "fk_Partida_Time1_idx");
 
                 entity.Property(e => e.IdPartida).HasColumnName("idPartida");
+
+                entity.Property(e => e.PeladaIdPelada).HasColumnName("Pelada_idPelada");
 
                 entity.Property(e => e.PlacarTimeCasa).HasMaxLength(45);
 
                 entity.Property(e => e.PlacarTimeFora).HasMaxLength(45);
 
                 entity.Property(e => e.TimeIdTime).HasColumnName("Time_idTime");
+
+                entity.HasOne(d => d.PeladaIdPeladaNavigation)
+                    .WithMany(p => p.Partida)
+                    .HasForeignKey(d => d.PeladaIdPelada)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_Partida_Pelada1");
 
                 entity.HasOne(d => d.TimeIdTimeNavigation)
                     .WithMany(p => p.Partida)

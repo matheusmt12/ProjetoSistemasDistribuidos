@@ -17,7 +17,8 @@
             <Entry Placeholder="Informe Seu nome e Sobrenome"
                    x:Name="NomeIforme"
                    />
-            <Picker Title="Selecione a sua posição" 
+            <Picker Title="Selecione a sua posição"
+                    x:Name="pickerJogador"
                     >
                 <Picker.Items>
                     <x:String>Gol</x:String>
@@ -29,6 +30,8 @@
             <Entry Placeholder="Código da pelada gerada por quem criou ela"
                    x:Name="CodigoPelada"
                    />
+            
+            
 
             <Button Text="Enviar info" 
                     x:Name="btnEnviar"

@@ -323,3 +323,5 @@ C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\MauiApp1\Maui
 C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\MauiApp1\MauiApp1\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\MauiApp1\MauiApp1\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
 C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\MauiApp1\MauiApp1\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Newtonsoft.Json.dll
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\MauiApp1\MauiApp1\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\BuscarApi.dll
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\MauiApp1\MauiApp1\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\BuscarApi.pdb

@@ -1956,6 +1956,30 @@
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
+        }
       }
     },
     "net7.0-android33.0/android-arm": {
@@ -3902,6 +3926,30 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
+        }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
         }
       }
     },
@@ -5850,6 +5898,30 @@
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
+        }
       }
     },
     "net7.0-android33.0/android-x64": {
@@ -7796,6 +7868,30 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
+        }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
         }
       }
     },
@@ -9744,6 +9840,30 @@
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
+        }
       }
     },
     "net7.0-android33.0/iossimulator-x64": {
@@ -11690,6 +11810,30 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
+        }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
         }
       }
     },
@@ -13638,6 +13782,30 @@
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
+        }
       }
     },
     "net7.0-android33.0/win10-x64": {
@@ -15585,6 +15753,30 @@
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
+        }
       }
     },
     "net7.0-ios16.1": {
@@ -16589,6 +16781,30 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
         }
       }
     },
@@ -17775,6 +17991,30 @@
             "related": ".xml"
           }
         }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
+        }
       }
     },
     "net7.0-ios16.1/android-arm64": {
@@ -18959,6 +19199,30 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
         }
       }
     },
@@ -20145,6 +20409,30 @@
             "related": ".xml"
           }
         }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
+        }
       }
     },
     "net7.0-ios16.1/android-x86": {
@@ -21329,6 +21617,30 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
         }
       }
     },
@@ -22515,6 +22827,30 @@
             "related": ".xml"
           }
         }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
+        }
       }
     },
     "net7.0-ios16.1/maccatalyst-x64": {
@@ -23699,6 +24035,30 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
         }
       }
     },
@@ -24892,6 +25252,30 @@
             "related": ".xml"
           }
         }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
+        }
       }
     },
     "net7.0-maccatalyst16.1": {
@@ -25896,6 +26280,30 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
         }
       }
     },
@@ -27082,6 +27490,30 @@
             "related": ".xml"
           }
         }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
+        }
       }
     },
     "net7.0-maccatalyst16.1/android-arm64": {
@@ -28266,6 +28698,30 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
         }
       }
     },
@@ -29452,6 +29908,30 @@
             "related": ".xml"
           }
         }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
+        }
       }
     },
     "net7.0-maccatalyst16.1/android-x86": {
@@ -30636,6 +31116,30 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
         }
       }
     },
@@ -31822,6 +32326,30 @@
             "related": ".xml"
           }
         }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
+        }
       }
     },
     "net7.0-maccatalyst16.1/maccatalyst-x64": {
@@ -33006,6 +33534,30 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
         }
       }
     },
@@ -34199,6 +34751,30 @@
             "related": ".xml"
           }
         }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
+        }
       }
     },
     "net7.0-windows10.0.19041": {
@@ -35341,6 +35917,30 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
         }
       }
     },
@@ -36637,6 +37237,30 @@
             "related": ".xml"
           }
         }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
+        }
       }
     },
     "net7.0-windows10.0.19041/android-arm64": {
@@ -37931,6 +38555,30 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
         }
       }
     },
@@ -39227,6 +39875,30 @@
             "related": ".xml"
           }
         }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
+        }
       }
     },
     "net7.0-windows10.0.19041/android-x86": {
@@ -40521,6 +41193,30 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
         }
       }
     },
@@ -41817,6 +42513,30 @@
             "related": ".xml"
           }
         }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
+        }
       }
     },
     "net7.0-windows10.0.19041/maccatalyst-x64": {
@@ -43111,6 +43831,30 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
         }
       }
     },
@@ -44419,6 +45163,30 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "BuscarApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "ThreadList": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuscarApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuscarApi.dll": {}
+        }
+      },
+      "ThreadList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThreadList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreadList.dll": {}
         }
       }
     }
@@ -50475,10 +51243,21 @@
         "xamarin.kotlinx.coroutines.core.jvm.1.6.4.1.nupkg.sha512",
         "xamarin.kotlinx.coroutines.core.jvm.nuspec"
       ]
+    },
+    "BuscarApi/1.0.0": {
+      "type": "project",
+      "path": "../BuscarApi/BuscarApi.csproj",
+      "msbuildProject": "../BuscarApi/BuscarApi.csproj"
+    },
+    "ThreadList/1.0.0": {
+      "type": "project",
+      "path": "../ThreadList/ThreadList.csproj",
+      "msbuildProject": "../ThreadList/ThreadList.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0-android33.0": [
+      "BuscarApi >= 1.0.0",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "Microsoft.Extensions.Logging >= 7.0.0",
@@ -50487,6 +51266,7 @@
       "Microsoft.Maui.Graphics >= 7.0.86",
       "Newtonsoft.Json >= 13.0.3",
       "System.Net.Http >= 4.3.4",
+      "ThreadList >= 1.0.0",
       "Xamarin.Android.Glide >= 4.13.2.2",
       "Xamarin.AndroidX.Browser >= 1.4.0.3",
       "Xamarin.AndroidX.Legacy.Support.V4 >= 1.0.0.15",
@@ -50500,6 +51280,7 @@
       "Xamarin.Google.Crypto.Tink.Android >= 1.7.0.1"
     ],
     "net7.0-ios16.1": [
+      "BuscarApi >= 1.0.0",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "Microsoft.Extensions.Logging >= 7.0.0",
@@ -50507,9 +51288,11 @@
       "Microsoft.Extensions.Logging.Debug >= 7.0.0",
       "Microsoft.Maui.Graphics >= 7.0.86",
       "Newtonsoft.Json >= 13.0.3",
-      "System.Net.Http >= 4.3.4"
+      "System.Net.Http >= 4.3.4",
+      "ThreadList >= 1.0.0"
     ],
     "net7.0-maccatalyst16.1": [
+      "BuscarApi >= 1.0.0",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "Microsoft.Extensions.Logging >= 7.0.0",
@@ -50517,9 +51300,11 @@
       "Microsoft.Extensions.Logging.Debug >= 7.0.0",
       "Microsoft.Maui.Graphics >= 7.0.86",
       "Newtonsoft.Json >= 13.0.3",
-      "System.Net.Http >= 4.3.4"
+      "System.Net.Http >= 4.3.4",
+      "ThreadList >= 1.0.0"
     ],
     "net7.0-windows10.0.19041": [
+      "BuscarApi >= 1.0.0",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "Microsoft.Extensions.Logging >= 7.0.0",
@@ -50530,7 +51315,8 @@
       "Microsoft.Windows.SDK.BuildTools >= 10.0.22621.755",
       "Microsoft.WindowsAppSDK >= 1.2.221209.1",
       "Newtonsoft.Json >= 13.0.3",
-      "System.Net.Http >= 4.3.4"
+      "System.Net.Http >= 4.3.4",
+      "ThreadList >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -50569,19 +51355,47 @@
       "frameworks": {
         "net7.0-android33.0": {
           "targetAlias": "net7.0-android",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\T. SD\\Projeto Disciplina\\MauiApp1\\BuscarApi\\BuscarApi.csproj": {
+              "projectPath": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\T. SD\\Projeto Disciplina\\MauiApp1\\BuscarApi\\BuscarApi.csproj"
+            },
+            "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\T. SD\\Projeto Disciplina\\MauiApp1\\ThreadList\\ThreadList.csproj": {
+              "projectPath": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\T. SD\\Projeto Disciplina\\MauiApp1\\ThreadList\\ThreadList.csproj"
+            }
+          }
         },
         "net7.0-ios16.1": {
           "targetAlias": "net7.0-ios",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\T. SD\\Projeto Disciplina\\MauiApp1\\BuscarApi\\BuscarApi.csproj": {
+              "projectPath": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\T. SD\\Projeto Disciplina\\MauiApp1\\BuscarApi\\BuscarApi.csproj"
+            },
+            "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\T. SD\\Projeto Disciplina\\MauiApp1\\ThreadList\\ThreadList.csproj": {
+              "projectPath": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\T. SD\\Projeto Disciplina\\MauiApp1\\ThreadList\\ThreadList.csproj"
+            }
+          }
         },
         "net7.0-maccatalyst16.1": {
           "targetAlias": "net7.0-maccatalyst",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\T. SD\\Projeto Disciplina\\MauiApp1\\BuscarApi\\BuscarApi.csproj": {
+              "projectPath": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\T. SD\\Projeto Disciplina\\MauiApp1\\BuscarApi\\BuscarApi.csproj"
+            },
+            "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\T. SD\\Projeto Disciplina\\MauiApp1\\ThreadList\\ThreadList.csproj": {
+              "projectPath": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\T. SD\\Projeto Disciplina\\MauiApp1\\ThreadList\\ThreadList.csproj"
+            }
+          }
         },
         "net7.0-windows10.0.19041": {
           "targetAlias": "net7.0-windows10.0.19041.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\T. SD\\Projeto Disciplina\\MauiApp1\\BuscarApi\\BuscarApi.csproj": {
+              "projectPath": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\T. SD\\Projeto Disciplina\\MauiApp1\\BuscarApi\\BuscarApi.csproj"
+            },
+            "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\T. SD\\Projeto Disciplina\\MauiApp1\\ThreadList\\ThreadList.csproj": {
+              "projectPath": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\T. SD\\Projeto Disciplina\\MauiApp1\\ThreadList\\ThreadList.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
