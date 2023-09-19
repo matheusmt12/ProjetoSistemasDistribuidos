@@ -8,5 +8,8 @@ namespace Core.Service
 {
     public interface IJogador
     {
+        Task<bool>Create(Jogador jogador);
+
+        Task<Jogador>GetJogador(int id);
     }
 }

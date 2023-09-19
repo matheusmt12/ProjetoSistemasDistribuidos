@@ -1,0 +1,12 @@
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\MauiApp1\BuscarApi\obj\Debug\net6.0\BuscarApi.csproj.AssemblyReference.cache
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\MauiApp1\BuscarApi\obj\Debug\net6.0\BuscarApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\MauiApp1\BuscarApi\obj\Debug\net6.0\BuscarApi.AssemblyInfoInputs.cache
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\MauiApp1\BuscarApi\obj\Debug\net6.0\BuscarApi.AssemblyInfo.cs
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\MauiApp1\BuscarApi\obj\Debug\net6.0\BuscarApi.csproj.CoreCompileInputs.cache
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\MauiApp1\BuscarApi\bin\Debug\net6.0\BuscarApi.deps.json
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\MauiApp1\BuscarApi\bin\Debug\net6.0\BuscarApi.dll
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\MauiApp1\BuscarApi\bin\Debug\net6.0\BuscarApi.pdb
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\MauiApp1\BuscarApi\obj\Debug\net6.0\BuscarApi.dll
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\MauiApp1\BuscarApi\obj\Debug\net6.0\refint\BuscarApi.dll
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\MauiApp1\BuscarApi\obj\Debug\net6.0\BuscarApi.pdb
+C:\Users\mathe\OneDrive\Área de Trabalho\T. SD\Projeto Disciplina\MauiApp1\BuscarApi\obj\Debug\net6.0\ref\BuscarApi.dll
