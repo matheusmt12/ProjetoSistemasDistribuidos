@@ -22,6 +22,11 @@ namespace APIPelada
 
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             builder.Services.AddTransient<IPelada, PeladaService>();
+            builder.Services.AddTransient<IListaJogador,ListaJogadorService>();
+            builder.Services.AddTransient<IJogador, JogadorService>();
+            builder.Services.AddTransient<ITime,TimeService>();
+            builder.Services.AddTransient<IPartida,PartidaService>();
+
 
 
 

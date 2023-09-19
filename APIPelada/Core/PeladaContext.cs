@@ -105,6 +105,8 @@ namespace Core
 
                 entity.HasIndex(e => e.TimeIdTime, "fk_Partida_Time1_idx");
 
+                entity.HasIndex(e => e.TimeIdTimeFora, "fk_Partida_Time2_idx");
+
                 entity.Property(e => e.IdPartida).HasColumnName("idPartida");
 
                 entity.Property(e => e.PeladaIdPelada).HasColumnName("Pelada_idPelada");
@@ -115,6 +117,8 @@ namespace Core
 
                 entity.Property(e => e.TimeIdTime).HasColumnName("Time_idTime");
 
+                entity.Property(e => e.TimeIdTimeFora).HasColumnName("Time_idTime_Fora");
+
                 entity.HasOne(d => d.PeladaIdPeladaNavigation)
                     .WithMany(p => p.Partida)
                     .HasForeignKey(d => d.PeladaIdPelada)
@@ -122,10 +126,16 @@ namespace Core
                     .HasConstraintName("fk_Partida_Pelada1");
 
                 entity.HasOne(d => d.TimeIdTimeNavigation)
-                    .WithMany(p => p.Partida)
+                    .WithMany(p => p.PartidumTimeIdTimeNavigations)
                     .HasForeignKey(d => d.TimeIdTime)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_Partida_Time1");
+
+                entity.HasOne(d => d.TimeIdTimeForaNavigation)
+                    .WithMany(p => p.PartidumTimeIdTimeForaNavigations)
+                    .HasForeignKey(d => d.TimeIdTimeFora)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_Partida_Time2");
             });
 
             modelBuilder.Entity<Peladum>(entity =>

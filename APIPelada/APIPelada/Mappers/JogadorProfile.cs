@@ -1,11 +1,12 @@
 ﻿using APIPelada.Model;
 using AutoMapper;
+using Core;
 
 namespace APIPelada.Mappers
 {
-    public class Jogador : Profile
+    public class JogadorProfile : Profile
     {
-        public Jogador()
+        public JogadorProfile()
         {
             CreateMap<JogadorModel, Jogador>().ReverseMap();
         }
