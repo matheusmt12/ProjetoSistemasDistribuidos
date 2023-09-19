@@ -1,1 +1,8 @@
-/APIPelada
+/APIPelada/APIPelada/bin
+/APIPelada/APIPelada/obj
+/APIPelada/Service/bin
+/APIPelada/Service/obj
+/MauiApp1/obj
+/MauiApp1/BuscarApi/bin
+/MauiApp1/BuscarApi/obj
+/APIPelada/.vs
