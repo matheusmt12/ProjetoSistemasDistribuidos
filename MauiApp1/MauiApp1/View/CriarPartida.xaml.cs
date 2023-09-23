@@ -1,49 +1,50 @@
+using BuscarApi;
+
 namespace MauiApp1;
 
 public partial class CriarPartida : ContentPage
 {
 
-	private Label _labelIni;
-	private Entry _entryName;
-	private Label _receiveApi;
-	private Button _criarPartida;
-	
-	public CriarPartida()
-	{
-		_entryName = new Entry()
-		{
-			Placeholder = "Info"
-		};
-
-		_labelIni = new Label()
-		{
-			Text = "Criar partida"
-		};
-		_receiveApi = new Label();
-
-		_criarPartida = new Button()
-		{
-			Text = "Confirmar"
-		};
-
-		_criarPartida.Clicked += btnCriarPartida_Clicked;
-		Content = new StackLayout
-		{
-			Children = { _labelIni, _entryName,_criarPartida,_receiveApi}
-		};
-	}
+    public CriarPartida()
+    {
+        InitializeComponent();
+    }
 
     private async void btnCriarPartida_Clicked(object sender, EventArgs e)
     {
-		var dadosApi = new DadosApi();
-		var dadosParaEnviar = new DadosAPI();
+        var dadosApi = new DadosApi();
+        var dadosParaEnviar = new PeladaAPI();
+        var criarJogador = new Jogador();
 
-		dadosApi.Data = DateTime.Now;
-		dadosApi.CodigoPelada = "1235468";
-		dadosApi.Nome = _entryName.Text;
 
-		string receive = await dadosParaEnviar.PostDados(dadosApi);
+        Random r = new Random();
 
-		_receiveApi.Text = receive;
+        string codigo = String.Empty;
+        for (int i = 0; i < 6; i++)
+        {
+            int random = r.Next(10);
+            codigo += random.ToString();
+        }
+        DateTime horas = DateTime.Now;
+
+        //criando pelada
+        dadosApi.CodigoPelada = codigo;
+        dadosApi.Nome = nomePartida.Text;
+        dadosApi.Data = DateTime.Now;
+
+        string receive = await dadosParaEnviar.PostDados(dadosApi);
+        if (receive == "Sucesso")
+            textoCodigoPartida.Text = receive + ": " + "O código da pelada é " + codigo;
+
+
+        JogadorObject jogador = new JogadorObject();
+
+        jogador.CodigoTorneio = codigo;
+        jogador.NomeJogador = nomeJogador.Text;
+        jogador.Status = "Dono";
+        jogador.PosicaoJogador = (string)pickerJogador.SelectedItem;
+
+       await  criarJogador.PostDados(jogador);
+
     }
 }

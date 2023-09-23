@@ -48,8 +48,7 @@ namespace APIPelada.Controllers
             {
                 return BadRequest("Dados inválidos");
             }
-
-            var jogador = _mapper.Map<Jogador>(value);
+            var jogador =  _mapper.Map<Jogador>(value);
             if (await _jogador.Create(jogador))
             {
                 return Ok("Sucesso");

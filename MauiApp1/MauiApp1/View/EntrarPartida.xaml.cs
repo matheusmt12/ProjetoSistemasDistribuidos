@@ -17,12 +17,12 @@ public partial class EntrarPartida : ContentPage
 	
 	public async void EnviarInfo(object sende, EventArgs e)
 	{
-		JogadorObject jogadorObject = new JogadorObject();
+		//JogadorObject jogadorObject = new JogadorObject();
 
 
-		jogadorObject.Name = NomeIforme.Text;
-		jogadorObject.Posicao = (string)pickerJogador.SelectedItem;
-		jogadorObject.CodigoPartida = CodigoPelada.Text;
+		//jogadorObject.Name = NomeIforme.Text;
+		//jogadorObject.Posicao = (string)pickerJogador.SelectedItem;
+		//jogadorObject.CodigoPartida = CodigoPelada.Text;
 
 	}
 

@@ -9,5 +9,6 @@ namespace Core.Service
     public interface IListaJogador
     {
         Task<bool> Create(Listajogador listajogador);
+        int GetIdPelada(string codigoPelada);
     }
 }

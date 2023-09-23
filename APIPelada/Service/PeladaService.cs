@@ -24,10 +24,10 @@ namespace Service
 
 
 
-                await _context.AddAsync(peladum);
-                await _context.SaveChangesAsync();
+            await _context.AddAsync(peladum);
+            await _context.SaveChangesAsync();
 
-                return peladum.IdPelada;
+            return peladum.IdPelada;
 
 
         }
@@ -35,6 +35,12 @@ namespace Service
         public async Task<Peladum> Get(int id)
         {
             return await _context.Pelada.FindAsync(id);
+        }
+
+        public async Task<int> GetIdPelada(string codigo)
+        {
+            return await _context.Pelada.Where(g => g.CodigoPelada == codigo)
+                .Select( g => g.IdPelada).FirstOrDefaultAsync();
         }
     }
 }

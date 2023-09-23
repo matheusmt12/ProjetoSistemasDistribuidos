@@ -3,11 +3,84 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.CriarPartida"
              Title="CriarPartida">
-    <VerticalStackLayout>
+    <VerticalStackLayout VerticalOptions="Center">
 
 
-        <Button Text="Comfirmar"
-                x:Name="btnCriarPartida"
-                Clicked="btnCriarPartida_Clicked"/>
+        <Label Text=""
+              FontSize="20"
+            x:Name="textoCodigoPartida"
+               VerticalOptions="Center"/>
+
+        <Grid VerticalOptions="Center"
+                  MaximumWidthRequest="500"
+                  ColumnSpacing="10"
+                  RowSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+
+            <Label Grid.Column="0"
+                   Grid.Row="0"
+                   Text="Informe seu nome:"
+                   FontSize="20"
+                   
+                   />
+            <Entry Grid.Column="1"
+                   Grid.Row="0"
+                   VerticalOptions="Center"
+                   x:Name="nomeJogador"
+                   Placeholder="Informe seu nome"
+                   
+                   />
+            <Label Grid.Column="0"
+                   Grid.Row="1"
+                   Text="Selecione sua posição"
+                   FontSize="20"
+                
+                />
+            <Picker 
+                    x:Name="pickerJogador"
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    FontSize="20"
+                
+                    >
+                <Picker.Items>
+                    <x:String>Gol</x:String>
+                    <x:String>Linha</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Nome da Pelada"
+                   Grid.Column="0"
+                   Grid.Row="3"
+                   FontSize="20"
+                   />
+            <Entry Grid.Column="1"
+                   Grid.Row="3"
+                   x:Name="nomePartida"
+                   VerticalOptions="Center"
+                   Placeholder="Nome da partida"
+                />
+            <Button Grid.ColumnSpan="2"
+                    Grid.Row="4"
+                    Text="Comfirmar"
+                    x:Name="btnCriarPartida"
+                    Clicked="btnCriarPartida_Clicked"/>
+
+
+        </Grid>
+
+
     </VerticalStackLayout>
 </ContentPage>

@@ -1,11 +1,11 @@
-﻿using Core;
-using Core.Service;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Core;
+using Core.Service;
 namespace Service
 {
     public class JogadorService : IJogador
@@ -21,6 +21,10 @@ namespace Service
         {
             try
             {
+
+
+
+
                 await _context.AddAsync(jogador);
                 await _context.SaveChangesAsync();
                 return true;
@@ -45,5 +49,6 @@ namespace Service
             }
 
         }
+
     }
 }

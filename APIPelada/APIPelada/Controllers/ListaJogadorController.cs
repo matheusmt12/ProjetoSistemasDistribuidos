@@ -47,7 +47,10 @@ namespace APIPelada.Controllers
             {
                 return BadRequest("Dados inválidos");
             }
+
+            var idPelada =  _listaJogador.GetIdPelada(listaJogadorModel.CodigoTorneio);
             var jogadores = _mapper.Map<Listajogador>(listaJogadorModel);
+            jogadores.PeladaIdPelada = idPelada;
             if(await _listaJogador.Create(jogadores))
             {
                 return Ok("Sucesso"); 

@@ -16,7 +16,7 @@ public partial class NewPage1 : ContentPage
 
 	private async void CarregarDadosDaApi()
 	{
-		var apiService = new DadosAPI();
+		var apiService = new PeladaAPI();
 		var dados = await apiService.GetDadosAPI();
 		if(dados == null)
 		{

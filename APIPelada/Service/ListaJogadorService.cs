@@ -1,7 +1,9 @@
 ﻿using Core;
 using Core.Service;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +32,23 @@ namespace Service
             catch
             {
                 return false;
+            }
+        }
+
+        public int GetIdPelada(string codigo)
+        {
+            try
+            {
+                var query =  _context.Pelada
+                    .Where(g => g.CodigoPelada == codigo)
+                    .Select(g => g.IdPelada).FirstOrDefault();
+
+
+                return query;
+            }
+            catch
+            {
+                return 0;
             }
         }
     }
