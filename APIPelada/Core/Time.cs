@@ -10,8 +10,8 @@ namespace Core
         public Time()
         {
             Jogadors = new HashSet<Jogador>();
+            PartidumTimeIdTimeCasaNavigations = new HashSet<Partidum>();
             PartidumTimeIdTimeForaNavigations = new HashSet<Partidum>();
-            PartidumTimeIdTimeNavigations = new HashSet<Partidum>();
         }
 
         public int IdTime { get; set; }
@@ -20,7 +20,7 @@ namespace Core
 
         public virtual Peladum PeladaIdPeladaNavigation { get; set; }
         public virtual ICollection<Jogador> Jogadors { get; set; }
+        public virtual ICollection<Partidum> PartidumTimeIdTimeCasaNavigations { get; set; }
         public virtual ICollection<Partidum> PartidumTimeIdTimeForaNavigations { get; set; }
-        public virtual ICollection<Partidum> PartidumTimeIdTimeNavigations { get; set; }
     }
 }

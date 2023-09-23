@@ -53,6 +53,8 @@ namespace Core
                     .IsRequired()
                     .HasColumnType("enum('GOL','LINHA')");
 
+                entity.Property(e => e.Status).HasMaxLength(45);
+
                 entity.Property(e => e.TimeIdTime).HasColumnName("Time_idTime");
 
                 entity.HasOne(d => d.TimeIdTimeNavigation)
@@ -85,7 +87,9 @@ namespace Core
 
                 entity.Property(e => e.PosicaoJogador)
                     .IsRequired()
-                    .HasMaxLength(45);
+                    .HasColumnType("enum('GOL','LINHA')");
+
+                entity.Property(e => e.Status).HasMaxLength(45);
 
                 entity.HasOne(d => d.PeladaIdPeladaNavigation)
                     .WithMany(p => p.Listajogadors)
@@ -103,7 +107,7 @@ namespace Core
 
                 entity.HasIndex(e => e.PeladaIdPelada, "fk_Partida_Pelada1_idx");
 
-                entity.HasIndex(e => e.TimeIdTime, "fk_Partida_Time1_idx");
+                entity.HasIndex(e => e.TimeIdTimeCasa, "fk_Partida_Time1_idx");
 
                 entity.HasIndex(e => e.TimeIdTimeFora, "fk_Partida_Time2_idx");
 
@@ -115,7 +119,7 @@ namespace Core
 
                 entity.Property(e => e.PlacarTimeFora).HasMaxLength(45);
 
-                entity.Property(e => e.TimeIdTime).HasColumnName("Time_idTime");
+                entity.Property(e => e.TimeIdTimeCasa).HasColumnName("Time_idTime_Casa");
 
                 entity.Property(e => e.TimeIdTimeFora).HasColumnName("Time_idTime_Fora");
 
@@ -125,9 +129,9 @@ namespace Core
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_Partida_Pelada1");
 
-                entity.HasOne(d => d.TimeIdTimeNavigation)
-                    .WithMany(p => p.PartidumTimeIdTimeNavigations)
-                    .HasForeignKey(d => d.TimeIdTime)
+                entity.HasOne(d => d.TimeIdTimeCasaNavigation)
+                    .WithMany(p => p.PartidumTimeIdTimeCasaNavigations)
+                    .HasForeignKey(d => d.TimeIdTimeCasa)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_Partida_Time1");
 

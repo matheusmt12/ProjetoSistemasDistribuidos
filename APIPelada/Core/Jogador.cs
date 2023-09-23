@@ -11,6 +11,7 @@ namespace Core
         public string Nome { get; set; }
         public int TimeIdTime { get; set; }
         public string PosicaoJogador { get; set; }
+        public string Status { get; set; }
 
         public virtual Time TimeIdTimeNavigation { get; set; }
     }
