@@ -56,14 +56,13 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\BuscarApi\BuscarApi.csproj" />
-	  <ProjectReference Include="..\ThreadList\ThreadList.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="CriarPartida.xaml">
+	  <MauiXaml Update="View\CriarPartida.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="EntrarPartida.xaml">
+	  <MauiXaml Update="View\EntrarPartida.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="NewPage1.xaml">
