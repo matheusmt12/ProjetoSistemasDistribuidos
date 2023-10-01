@@ -10,7 +10,6 @@ namespace Core
         public Peladum()
         {
             Listajogadors = new HashSet<Listajogador>();
-            Partida = new HashSet<Partidum>();
             Times = new HashSet<Time>();
         }
 
@@ -20,7 +19,6 @@ namespace Core
         public string CodigoPelada { get; set; }
 
         public virtual ICollection<Listajogador> Listajogadors { get; set; }
-        public virtual ICollection<Partidum> Partida { get; set; }
         public virtual ICollection<Time> Times { get; set; }
     }
 }
