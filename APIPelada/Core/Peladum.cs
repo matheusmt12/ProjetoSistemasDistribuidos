@@ -15,8 +15,9 @@ namespace Core
 
         public int IdPelada { get; set; }
         public string Nome { get; set; }
-        public DateTime Data { get; set; }
+        public DateTime? Data { get; set; }
         public string CodigoPelada { get; set; }
+        public string Local { get; set; }
 
         public virtual ICollection<Listajogador> Listajogadors { get; set; }
         public virtual ICollection<Time> Times { get; set; }

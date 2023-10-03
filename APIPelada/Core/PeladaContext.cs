@@ -42,21 +42,24 @@ namespace Core
 
                 entity.ToTable("jogador");
 
-                entity.Property(e => e.IdListaJogador).HasColumnName("idListaJogador");
+                entity.HasIndex(e => e.UserName, "UserName_UNIQUE")
+                    .IsUnique();
 
-                entity.Property(e => e.CodigoTorneio)
-                    .IsRequired()
-                    .HasMaxLength(45);
+                entity.Property(e => e.IdListaJogador).HasColumnName("idListaJogador");
 
                 entity.Property(e => e.NomeJogador)
                     .IsRequired()
                     .HasMaxLength(45);
 
-                entity.Property(e => e.PosicaoJogador)
-                    .IsRequired()
-                    .HasColumnType("enum('GOL','LINHA')");
+                entity.Property(e => e.PosicaoJogador).HasColumnType("enum('GOL','LINHA')");
 
-                entity.Property(e => e.Status).HasMaxLength(45);
+                entity.Property(e => e.Senha)
+                    .IsRequired()
+                    .HasMaxLength(45);
+
+                entity.Property(e => e.UserName)
+                    .IsRequired()
+                    .HasMaxLength(45);
             });
 
             modelBuilder.Entity<Listajogador>(entity =>
@@ -128,11 +131,16 @@ namespace Core
 
                 entity.ToTable("pelada");
 
+                entity.HasIndex(e => e.CodigoPelada, "CodigoPelada_UNIQUE")
+                    .IsUnique();
+
                 entity.Property(e => e.IdPelada).HasColumnName("idPelada");
 
                 entity.Property(e => e.CodigoPelada)
                     .IsRequired()
                     .HasMaxLength(45);
+
+                entity.Property(e => e.Local).HasMaxLength(200);
 
                 entity.Property(e => e.Nome)
                     .IsRequired()

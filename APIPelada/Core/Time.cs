@@ -17,6 +17,8 @@ namespace Core
         public int IdTime { get; set; }
         public string Nome { get; set; }
         public int PeladaIdPelada { get; set; }
+        public short? Vitorias { get; set; }
+        public short? Derrota { get; set; }
 
         public virtual Peladum PeladaIdPeladaNavigation { get; set; }
         public virtual ICollection<Partidum> PartidumTimeIdTimeCasaNavigations { get; set; }

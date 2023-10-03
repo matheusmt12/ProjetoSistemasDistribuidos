@@ -15,9 +15,9 @@ namespace Core
 
         public int IdListaJogador { get; set; }
         public string NomeJogador { get; set; }
-        public string CodigoTorneio { get; set; }
         public string PosicaoJogador { get; set; }
-        public string Status { get; set; }
+        public string UserName { get; set; }
+        public string Senha { get; set; }
 
         public virtual ICollection<Listajogador> Listajogadors { get; set; }
         public virtual ICollection<Timejogador> Timejogadors { get; set; }
