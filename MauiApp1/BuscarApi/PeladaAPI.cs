@@ -17,8 +17,9 @@ namespace MauiApp1
 
         public PeladaAPI()
         {
+
             _httpClient = new HttpClient();
-            _httpClient.BaseAddress = new Uri("https://localhost:7070");
+            _httpClient.BaseAddress = new Uri("http://10.0.0.8:7070");
 
 
         }
@@ -28,7 +29,7 @@ namespace MauiApp1
         {
 
 
-            var response = await _httpClient.GetAsync($"api/Pelada/{5}");
+            var response = await _httpClient.GetAsync($"api/Pelada/{1}");
             if (response.IsSuccessStatusCode)
             {
                 string apiresult = await response.Content.ReadAsStringAsync();
@@ -65,7 +66,8 @@ namespace MauiApp1
 public class DadosApi
 {
     public string Nome { get; set; }
-    public DateTime Data { get; set; }
+    public DateTime? Data { get; set; }
     public string CodigoPelada { get; set; }
+    public string Local { get; set; }
 
 }

@@ -29,22 +29,22 @@ public partial class CriarPartida : ContentPage
 
         //criando pelada
         dadosApi.CodigoPelada = codigo;
-        dadosApi.Nome = nomePartida.Text;
-        dadosApi.Data = DateTime.Now;
-
+        dadosApi.Nome = nomePelada.Text;
+        dadosApi.Data = dataPelada.Date;
+        dadosApi.Local = nomeLocal.Text;
         string receive = await dadosParaEnviar.PostDados(dadosApi);
         if (receive == "Sucesso")
             textoCodigoPartida.Text = receive + ": " + "O código da pelada é " + codigo;
 
 
-        JogadorObject jogador = new JogadorObject();
+       // JogadorObject jogador = new JogadorObject();
 
-        jogador.CodigoTorneio = codigo;
-        jogador.NomeJogador = nomeJogador.Text;
-        jogador.Status = "Dono";
-        jogador.PosicaoJogador = (string)pickerJogador.SelectedItem;
+       // jogador.CodigoTorneio = codigo;
+       // jogador.NomeJogador = nomeJogador.Text;
+       // jogador.Status = "Dono";
+       // jogador.PosicaoJogador = (string)pickerJogador.SelectedItem;
 
-       await  criarJogador.PostDados(jogador);
+       //await  criarJogador.PostDados(jogador);
 
     }
 }

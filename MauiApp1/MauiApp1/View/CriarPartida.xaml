@@ -31,24 +31,24 @@
 
             <Label Grid.Column="0"
                    Grid.Row="0"
-                   Text="Informe seu nome:"
+                   Text="Informe o nome da pelada:"
                    FontSize="20"
                    
                    />
             <Entry Grid.Column="1"
                    Grid.Row="0"
                    VerticalOptions="Center"
-                   x:Name="nomeJogador"
+                   x:Name="nomePelada"
                    Placeholder="Informe seu nome"
                    
                    />
             <Label Grid.Column="0"
                    Grid.Row="1"
-                   Text="Selecione sua posição"
+                   Text="Data da Pelada:"
                    FontSize="20"
                 
                 />
-            <Picker 
+            <!--<Picker 
                     x:Name="pickerJogador"
                     Grid.Column="1"
                     Grid.Row="1"
@@ -59,18 +59,20 @@
                     <x:String>Gol</x:String>
                     <x:String>Linha</x:String>
                 </Picker.Items>
-            </Picker>
-
-            <Label Text="Nome da Pelada"
+            </Picker>-->
+            <DatePicker x:Name="dataPelada"
+                        Grid.Column="1"
+                        Grid.Row="1"/>
+            <Label Text="Local da Pelada"
                    Grid.Column="0"
                    Grid.Row="3"
                    FontSize="20"
                    />
             <Entry Grid.Column="1"
                    Grid.Row="3"
-                   x:Name="nomePartida"
+                   x:Name="nomeLocal"
                    VerticalOptions="Center"
-                   Placeholder="Nome da partida"
+                   Placeholder="Local da Pelada"
                 />
             <Button Grid.ColumnSpan="2"
                     Grid.Row="4"
