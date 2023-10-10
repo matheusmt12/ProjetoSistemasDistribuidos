@@ -11,21 +11,23 @@
 
 
 
-            <Button Text="Entrar Em Pelada"
+            <Button Text="Entrar"
                     x:Name="btnEntrarPartida"
                     Clicked="EntrarPartida"
                     />
 
 
-            <Button Text="Teste"
-                    x:Name="btnTeste"
-                    Clicked="Teste"
-                    />
-            <Button Text="Criar Pelada"
-                    x:Name="btnCriarPartida"
-                    Clicked="CriarPartida"/>
+                <Label Text="Cadastre-se"
+                   TextColor="Blue"
+                   FontAttributes="Italic"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLabelClicked" />
+                    </Label.GestureRecognizers>
+                </Label>
 
-            <Button Text="Sair" />
+
 
         </VerticalStackLayout>
     </ScrollView>

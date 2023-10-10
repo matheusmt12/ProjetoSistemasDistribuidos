@@ -26,7 +26,7 @@ namespace BuscarApi
             var jason = Newtonsoft.Json.JsonConvert.SerializeObject(jogadorObject);
             var contentStrig = new StringContent(jason, System.Text.Encoding.UTF8, "application/json");
 
-            var response = await _httpCliente.PostAsync("api/listajogador", contentStrig);
+            var response = await _httpCliente.PostAsync("api/Jogador", contentStrig);
 
             if(response.IsSuccessStatusCode)
             {
@@ -43,9 +43,9 @@ namespace BuscarApi
 
     public class JogadorObject
     {
-        public string NomeJogador { get; set; } = string.Empty;
-        public string CodigoTorneio { get; set; } = string.Empty;
-        public string PosicaoJogador { get; set; } = string.Empty;
-        public string Status { get; set; } = string.Empty;  
+        public string? NomeJogador { get; set; }
+        public string? PosicaoJogador { get; set; }
+        public string? UserName { get; set; }
+        public string? Senha { get; set; }
     }
 }

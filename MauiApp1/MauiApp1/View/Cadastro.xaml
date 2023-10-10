@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.View.Cadastro"
+             Title="Cadastro">
+    <VerticalStackLayout>
+
+
+
+        <Grid  VerticalOptions="Center"
+               HorizontalOptions="Center"
+                  ColumnSpacing="10"
+               Padding="20"
+                  RowSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+            <Label Text="Informe seu nome:"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Padding="10"
+               Grid.Column="0"
+               Grid.Row="0"/>
+
+            <Entry Placeholder="Informe Seu nome e Sobrenome"
+                  x:Name="NomeIforme"
+                   Grid.Row="0"
+                   Grid.Column="1"
+                  />
+            <Label Text="Selecione a sua posição:"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Padding="10"
+               Grid.Column="0"
+               Grid.Row="1"/>
+            <Picker
+                   x:Name="pickerJogador"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                   >
+                <Picker.Items>
+                    <x:String>Gol</x:String>
+                    <x:String>Linha</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Login:"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Padding="10"
+               Grid.Column="0"
+               Grid.Row="2"/>
+
+            <Entry Placeholder="infore seu username"
+                  x:Name="login"
+                   Grid.Row="2"
+                   Grid.Column="1"
+                  />
+
+            <Label Text="Senha:"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Padding="10"
+               Grid.Column="0"
+               Grid.Row="3"/>
+
+            <Entry Placeholder="Digite sua senha"
+                  x:Name="senha1"
+                   Grid.Row="3"
+                   Grid.Column="1"
+                   IsPassword="True"
+                  />
+            <Label Text="Repita sua senha:"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Padding="10"
+               Grid.Column="0"
+               Grid.Row="4"/>
+
+            <Entry Placeholder="Digite sua senha"
+                  x:Name="senha2"
+                   Grid.Row="4"
+                   Grid.Column="1"
+                   IsPassword="True"
+                  />
+
+
+            <Button Text="Confirmar" 
+                   x:Name="btnEnviar"
+                   Clicked="EnviarInfo"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="5"/>
+                   
+        </Grid>
+
+
+    </VerticalStackLayout>
+</ContentPage>

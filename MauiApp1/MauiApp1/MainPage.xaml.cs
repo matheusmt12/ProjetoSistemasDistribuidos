@@ -1,4 +1,6 @@
-﻿namespace MauiApp1;
+﻿using MauiApp1.View;
+
+namespace MauiApp1;
 
 public partial class MainPage : ContentPage
 {
@@ -26,14 +28,9 @@ public partial class MainPage : ContentPage
 		await Navigation.PushAsync(new EntrarPartida());
 	}
 
-	private async void Teste(object sender, EventArgs args)
-	{
-		await Navigation.PushAsync(new NewPage1());	
-	}
-
-	private async void CriarPartida(object sender,EventArgs args)
-	{
-		await Navigation.PushAsync(new CriarPartida());
+    private async void OnLabelClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Cadastro());
     }
 
 }
