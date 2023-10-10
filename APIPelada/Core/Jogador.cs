@@ -13,7 +13,7 @@ namespace Core
             Timejogadors = new HashSet<Timejogador>();
         }
 
-        public int IdListaJogador { get; set; }
+        public int IdJogador { get; set; }
         public string NomeJogador { get; set; }
         public string PosicaoJogador { get; set; }
         public string UserName { get; set; }

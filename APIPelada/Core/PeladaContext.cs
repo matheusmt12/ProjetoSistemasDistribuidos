@@ -37,7 +37,7 @@ namespace Core
         {
             modelBuilder.Entity<Jogador>(entity =>
             {
-                entity.HasKey(e => e.IdListaJogador)
+                entity.HasKey(e => e.IdJogador)
                     .HasName("PRIMARY");
 
                 entity.ToTable("jogador");
@@ -45,7 +45,7 @@ namespace Core
                 entity.HasIndex(e => e.UserName, "UserName_UNIQUE")
                     .IsUnique();
 
-                entity.Property(e => e.IdListaJogador).HasColumnName("idListaJogador");
+                entity.Property(e => e.IdJogador).HasColumnName("idJogador");
 
                 entity.Property(e => e.NomeJogador)
                     .IsRequired()
@@ -64,22 +64,22 @@ namespace Core
 
             modelBuilder.Entity<Listajogador>(entity =>
             {
-                entity.HasKey(e => new { e.JogadorIdListaJogador, e.PeladaIdPelada })
+                entity.HasKey(e => new { e.JogadorIdJogador, e.PeladaIdPelada })
                     .HasName("PRIMARY");
 
                 entity.ToTable("listajogador");
 
-                entity.HasIndex(e => e.JogadorIdListaJogador, "fk_Jogador_has_Pelada_Jogador1_idx");
+                entity.HasIndex(e => e.JogadorIdJogador, "fk_Jogador_has_Pelada_Jogador1_idx");
 
                 entity.HasIndex(e => e.PeladaIdPelada, "fk_Jogador_has_Pelada_Pelada1_idx");
 
-                entity.Property(e => e.JogadorIdListaJogador).HasColumnName("Jogador_idListaJogador");
+                entity.Property(e => e.JogadorIdJogador).HasColumnName("Jogador_idJogador");
 
                 entity.Property(e => e.PeladaIdPelada).HasColumnName("Pelada_idPelada");
 
-                entity.HasOne(d => d.JogadorIdListaJogadorNavigation)
+                entity.HasOne(d => d.JogadorIdJogadorNavigation)
                     .WithMany(p => p.Listajogadors)
-                    .HasForeignKey(d => d.JogadorIdListaJogador)
+                    .HasForeignKey(d => d.JogadorIdJogador)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_Jogador_has_Pelada_Jogador1");
 
@@ -173,22 +173,22 @@ namespace Core
 
             modelBuilder.Entity<Timejogador>(entity =>
             {
-                entity.HasKey(e => new { e.TimeIdTime, e.JogadorIdListaJogador })
+                entity.HasKey(e => new { e.TimeIdTime, e.JogadorIdJogador })
                     .HasName("PRIMARY");
 
                 entity.ToTable("timejogador");
 
-                entity.HasIndex(e => e.JogadorIdListaJogador, "fk_Time_has_Jogador_Jogador1_idx");
+                entity.HasIndex(e => e.JogadorIdJogador, "fk_Time_has_Jogador_Jogador1_idx");
 
                 entity.HasIndex(e => e.TimeIdTime, "fk_Time_has_Jogador_Time1_idx");
 
                 entity.Property(e => e.TimeIdTime).HasColumnName("Time_idTime");
 
-                entity.Property(e => e.JogadorIdListaJogador).HasColumnName("Jogador_idListaJogador");
+                entity.Property(e => e.JogadorIdJogador).HasColumnName("Jogador_idJogador");
 
-                entity.HasOne(d => d.JogadorIdListaJogadorNavigation)
+                entity.HasOne(d => d.JogadorIdJogadorNavigation)
                     .WithMany(p => p.Timejogadors)
-                    .HasForeignKey(d => d.JogadorIdListaJogador)
+                    .HasForeignKey(d => d.JogadorIdJogador)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_Time_has_Jogador_Jogador1");
 
