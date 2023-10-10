@@ -24,6 +24,7 @@ namespace Service
         {
             try
             {
+                
                 await _context.AddAsync(jogador);
                 await _context.SaveChangesAsync();
                 return true;
@@ -34,13 +35,13 @@ namespace Service
             }
         }
 
-        public async Task<Jogador> GetJogador(string userName, string senha)
+        public Jogador? GetJogador(string nome)
         {
             try
             {
-                return await _context.Jogadors
-                .Where(g => g.UserName == userName && g.Senha == senha)
-                .SingleOrDefaultAsync();
+                return _context.Jogadors.Where(g => g.NomeJogador == nome)
+                    .FirstOrDefault();
+
             }
             catch
             {
@@ -49,6 +50,21 @@ namespace Service
 
         }
 
+        public bool Login(string username, string password)
+        {
+            try
+            {
+                var jogador = _context.Jogadors.Where(g => g.UserName == username && g.Senha == password)
+                    .FirstOrDefault();
+                if (jogador != null)
+                    return true;
+                return false;
 
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

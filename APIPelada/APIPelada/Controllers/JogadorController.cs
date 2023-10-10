@@ -34,19 +34,29 @@ namespace APIPelada.Controllers
         //}
 
         // GET api/<JogadorController>/5
-        [HttpGet("{userName},{senha}")]
-        public string Get(int id)
+        [HttpGet("{nome}")]
+        public ActionResult Get(string nome)
         {
-            return "value";
+            try
+            {
+                var jogador =  _jogador.GetJogador(nome);
+                if (jogador == null)
+                    return NotFound("Jogador não esta cadastrado");
+                return Ok(jogador);
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
 
         // POST api/<JogadorController>
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] JogadorModel value)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || value.Senha.Count() < 8)
             {
-                return BadRequest("Dados inválidos");
+                return BadRequest("Dados inválidos, verifique se a senha tem menos de 8 caracteres");
             }
             var jogador = _mapper.Map<Jogador>(value);
             if (await _jogador.Create(jogador))
