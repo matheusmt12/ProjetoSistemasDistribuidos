@@ -4,8 +4,11 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Core;
 using Core.Service;
+using System.Security.AccessControl;
+
 namespace Service
 {
     public class JogadorService : IJogador
@@ -21,27 +24,23 @@ namespace Service
         {
             try
             {
-
-
-
-
                 await _context.AddAsync(jogador);
                 await _context.SaveChangesAsync();
                 return true;
             }
             catch
             {
-                return false;  
+                return false;
             }
         }
 
-        public async Task<Jogador> GetJogador(int id)
+        public async Task<Jogador> GetJogador(string userName, string senha)
         {
-
             try
             {
-                var jogador = await _context.Jogadors.FindAsync(id);
-                return jogador;
+                return await _context.Jogadors
+                .Where(g => g.UserName == userName && g.Senha == senha)
+                .SingleOrDefaultAsync();
             }
             catch
             {
@@ -49,6 +48,7 @@ namespace Service
             }
 
         }
+
 
     }
 }
