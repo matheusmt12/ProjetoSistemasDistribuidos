@@ -33,12 +33,12 @@ namespace APIPelada.Controllers
         //    return new string[] { "value1", "value2" };
         //}
 
-        //// GET api/<JogadorController>/5
-        //[HttpGet("{id}")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
+        // GET api/<JogadorController>/5
+        [HttpGet("{userName},{senha}")]
+        public string Get(int id)
+        {
+            return "value";
+        }
 
         // POST api/<JogadorController>
         [HttpPost]
@@ -48,7 +48,7 @@ namespace APIPelada.Controllers
             {
                 return BadRequest("Dados inválidos");
             }
-            var jogador =  _mapper.Map<Jogador>(value);
+            var jogador = _mapper.Map<Jogador>(value);
             if (await _jogador.Create(jogador))
             {
                 return Ok("Sucesso");

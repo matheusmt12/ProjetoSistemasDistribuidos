@@ -2,10 +2,11 @@
 {
     public class JogadorModel
     {
-        //public int IdJogadores { get; set; }
-        public string Nome { get; set; } = string.Empty;
-        public int TimeIdTime { get; set; }
-        public string PosicaoJogador { get; set; } = string.Empty;
+        //public int IdJogador { get; set; }
+        public string? NomeJogador { get; set; }
+        public string? PosicaoJogador { get; set; }
+        public string? UserName { get; set; }
+        public string? Senha { get; set; }
 
     }
 }
