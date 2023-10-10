@@ -6,6 +6,7 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using BuscarApi;
 using Newtonsoft.Json;
 
 
@@ -19,7 +20,7 @@ namespace MauiApp1
         {
 
             _httpClient = new HttpClient();
-            _httpClient.BaseAddress = new Uri("http://10.0.0.8:7070");
+            _httpClient.BaseAddress = new Uri("https://localhost:7070");
 
 
         }
@@ -28,14 +29,15 @@ namespace MauiApp1
         public async Task<string> GetDadosAPI()
         {
 
-
-            var response = await _httpClient.GetAsync($"api/Pelada/{1}");
+            var username = "matheusmt1";
+            var password = "12345678";
+            var response = await _httpClient.GetAsync($"api/Login/{username},{password}");
             if (response.IsSuccessStatusCode)
             {
                 string apiresult = await response.Content.ReadAsStringAsync();
-                var dados = JsonConvert.DeserializeObject<DadosApi>(apiresult);
+                var dados = JsonConvert.DeserializeObject<JogadorObject>(apiresult);
                 Console.WriteLine(dados);
-                return dados.Nome;
+                return apiresult;
             }
             return $"Erro retorno";
 

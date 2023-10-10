@@ -50,20 +50,20 @@ namespace Service
 
         }
 
-        public bool Login(string username, string password)
+        public Jogador Login(string username, string password)
         {
             try
             {
                 var jogador = _context.Jogadors.Where(g => g.UserName == username && g.Senha == password)
                     .FirstOrDefault();
                 if (jogador != null)
-                    return true;
-                return false;
+                    return jogador;
+                return null;
 
             }
             catch
             {
-                return false;
+                return null;
             }
         }
     }

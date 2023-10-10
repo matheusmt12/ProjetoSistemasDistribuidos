@@ -12,6 +12,6 @@ namespace Core.Service
 
         Jogador GetJogador(string nome);
 
-        bool Login(string username, string password);
+        Jogador Login(string username, string password);
     }
 }

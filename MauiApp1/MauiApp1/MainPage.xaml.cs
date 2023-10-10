@@ -25,7 +25,7 @@ public partial class MainPage : ContentPage
 
 	private async void EntrarPartida(object sender, EventArgs e)
 	{
-		await Navigation.PushAsync(new EntrarPartida());
+		await Navigation.PushAsync(new Login());
 	}
 
     private async void OnLabelClicked(object sender, EventArgs e)

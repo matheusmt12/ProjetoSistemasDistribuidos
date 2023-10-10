@@ -20,12 +20,12 @@ namespace APIPelada.Controllers
 
         // GET api/<ValuesController>/5
         [HttpGet("{username},{password}")]
-        public ActionResult Get(string username, string password)
+        public async Task<ActionResult> Get(string username, string password)
         {
-           
-            if (_jogador.Login(username, password) == false)
+            var jogador = _jogador.Login(username, password);
+            if (jogador == null)
                 return NotFound("Login ou senha errada");
-            return Ok("Sucesso");
+            return Ok(jogador);
 
         }
 
