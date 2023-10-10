@@ -18,6 +18,7 @@ namespace Core
         public DateTime? Data { get; set; }
         public string CodigoPelada { get; set; }
         public string Local { get; set; }
+        public int QuantJogadorPorTime { get; set; }
 
         public virtual ICollection<Listajogador> Listajogadors { get; set; }
         public virtual ICollection<Time> Times { get; set; }
