@@ -11,5 +11,7 @@ namespace Core.Service
         Task<int> Create(Peladum peladum);
 
         Task<Peladum> Get(int id);
+
+        int GetPeladaByCod(string codigo);
     }
 }
