@@ -20,4 +20,9 @@ public partial class CodigoPelada : ContentPage
         }
 
 	}
+
+    public async void CriarPelada(object sender, EventArgs e)
+	{
+		await Navigation.PushAsync(new CriarPartida());
+	}
 }

@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.View.CodigoPelada"
              Title="CodigoPelada">
+   
     <VerticalStackLayout>
+      
         <Label Text="Codigo Pelada:"
           HorizontalOptions="Center"
           VerticalOptions="Center"
@@ -21,5 +23,11 @@
         Clicked="EntrarPelada"
          Grid.ColumnSpan="2"
          Grid.Row="5"/>
+
+        <Button Text="Criar Pelada" 
+         x:Name="BtnCriarPelada"
+         Clicked="CriarPelada"
+          Grid.ColumnSpan="2"
+          Grid.Row="5"/>    
     </VerticalStackLayout>
 </ContentPage>
