@@ -8,50 +8,75 @@
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
-            
-            <Label Text="UserName:"
-             HorizontalOptions="Center"
-             VerticalOptions="Center"
-             Padding="10"
-             Grid.Column="0"
-             Grid.Row="2"
+
+
+
+            <Grid 
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                ColumnSpacing="10"
+                Padding="20"
+                RowSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Label Text="UserName:"
+                      HorizontalOptions="Center"
+                      VerticalOptions="Center"
+                      Padding="10"
+                      Grid.Column="0"
+                      Grid.Row="0"
+                       
              />
-            <Entry Placeholder="informe seu username"
-                x:Name="login"
-                 Grid.Row="2"
-                 Grid.Column="1"
+                <Entry Placeholder="informe seu username"
+                    x:Name="login"
+                     Grid.Row="0"
+                     Grid.Column="1"
              />
 
-            <Label Text="Senha:"
-             HorizontalOptions="Center"
-             VerticalOptions="Center"
-             Padding="10"
-             Grid.Column="0"
-             Grid.Row="3"
+                <Label Text="Senha:"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     Padding="10"
+                     Grid.Column="0"
+                     Grid.Row="1"
               />
 
-            <Entry Placeholder="Digite sua senha"
-             x:Name="senha"
-             Grid.Row="3"
-             Grid.Column="1"
-             IsPassword="True"
+                <Entry Placeholder="Digite sua senha"
+                     x:Name="senha"
+                     Grid.Row="1"
+                     Grid.Column="1"
+                     IsPassword="True"
               />
 
-            <Button Text="Entrar"
+                <Button Text="Entrar"
                     x:Name="btnEntrarPartida"
                     Clicked="EntrarPartida"
+                        Grid.ColumnSpan="2"
+                        Grid.Row="2"
+                        
              />
 
+            </Grid>
 
-             <Label Text="Cadastre-se"
+
+
+            <Label Text="Cadastre-se"
                    TextColor="Blue"
                    FontAttributes="Italic"
                        HorizontalOptions="Center"
                        VerticalOptions="Center">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnLabelClicked" />
-                    </Label.GestureRecognizers>
-              </Label>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLabelClicked" />
+                </Label.GestureRecognizers>
+            </Label>
 
 
 
