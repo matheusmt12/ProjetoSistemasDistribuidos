@@ -4,8 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
+using System;
 using System.Threading.Tasks;
 
 namespace Service
@@ -35,11 +34,20 @@ namespace Service
             }
         }
 
+        public IEnumerable<Listajogador> GetAll()
+        {
+            return  _context.Listajogadors.ToList();
+
+
+
+
+        }
+
         public int GetIdPelada(string codigo)
         {
             try
             {
-                var query =  _context.Pelada
+                var query = _context.Pelada
                     .Where(g => g.CodigoPelada == codigo)
                     .Select(g => g.IdPelada).FirstOrDefault();
 
