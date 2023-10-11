@@ -25,12 +25,16 @@ namespace APIPelada.Controllers
 
 
 
-        // GET: api/<ListaJogadorController>
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
+        //GET: api/<ListaJogadorController>
+        [HttpGet]
+        public async  Task<ActionResult> Get()
+        {
+            var jogadores =  _listaJogador.GetAll();
+            var model = _mapper.Map<List<ListaJogadorModel>>(jogadores);
+            if (model.Count() != 0)
+                return Ok(model);
+            return BadRequest("Não ha nenhum item ");
+        }
 
         //// GET api/<ListaJogadorController>/5
         //[HttpGet("{id}")]
@@ -48,9 +52,7 @@ namespace APIPelada.Controllers
                 return BadRequest("Dados inválidos");
             }
 
-            var idPelada =  _listaJogador.GetIdPelada(listaJogadorModel.CodigoTorneio);
             var jogadores = _mapper.Map<Listajogador>(listaJogadorModel);
-            jogadores.PeladaIdPelada = idPelada;
             if(await _listaJogador.Create(jogadores))
             {
                 return Ok("Sucesso"); 

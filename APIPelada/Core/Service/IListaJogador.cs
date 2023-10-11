@@ -10,5 +10,6 @@ namespace Core.Service
     {
         Task<bool> Create(Listajogador listajogador);
         int GetIdPelada(string codigoPelada);
+        IEnumerable<Listajogador> GetAll();
     }
 }
