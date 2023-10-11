@@ -12,8 +12,12 @@ public partial class CodigoPelada : ContentPage
 		var idPelada = await pelada.GetPeladaByCod(codPelada.Text);
 		if(idPelada > 0)
 		{
-            await DisplayAlert("Sucesso", "Usuário encontrado!", "Confirmar");
+            await DisplayAlert("Sucesso", "Pelada encontrado!", "Confirmar");
 		}
+		else
+		{
+            await DisplayAlert("Erro", "Pelada nao encontrada!", "Confirmar");
+        }
 
 	}
 }
