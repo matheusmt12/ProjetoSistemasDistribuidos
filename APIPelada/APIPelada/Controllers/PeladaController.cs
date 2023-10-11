@@ -23,15 +23,6 @@ namespace APIPelada.Controllers
         }
 
 
-
-        // GET: api/<PeladaController>
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
-
-        // GET api/<PeladaController>/5
         [HttpGet("{id}")]
         public async Task<ActionResult> Get(int id)
         {
@@ -54,17 +45,14 @@ namespace APIPelada.Controllers
             return Ok("Sucesso");
 
         }
-
-        // PUT api/<PeladaController>/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
-
-        // DELETE api/<PeladaController>/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
+        [HttpGet("codigo/{codigo}")]
+        public async Task<ActionResult> GetByCodPelada(string codigo)
+        {
+            var pelada = _pelada.GetPeladaByCod(codigo);
+            if (pelada == null)
+                return NotFound();
+            return Ok(pelada);
+        }
+       
     }
 }

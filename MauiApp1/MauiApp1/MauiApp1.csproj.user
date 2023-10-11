@@ -14,7 +14,7 @@
     <MauiXaml Update="View\Cadastro.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="View\Login.xaml">
+    <MauiXaml Update="View\CodigoPelada.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
   </ItemGroup>

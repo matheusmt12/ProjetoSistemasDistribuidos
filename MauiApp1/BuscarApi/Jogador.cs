@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -35,6 +36,28 @@ namespace BuscarApi
             }
             return "erro";
         }
+
+        HttpClientHandler handler = new HttpClientHandler();
+        public async Task<string> GetLogin(string username, string senha)
+        {
+
+            var response = await _httpCliente.GetAsync($"api/Login/{username},{senha}");
+            if (response.IsSuccessStatusCode)
+            {
+                string apiresult = await response.Content.ReadAsStringAsync();
+                var dados = JsonConvert.DeserializeObject<JogadorObject>(apiresult);
+                Console.WriteLine(dados);
+                if (dados.UserName.Equals(username) && dados.Senha.Equals(senha))
+                {
+                    return "Encontrado";
+                }
+                  
+            }
+            return $"Erro retorno";
+
+
+        }
+
 
 
     }

@@ -8,16 +8,42 @@
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
+            
+            <Label Text="UserName:"
+             HorizontalOptions="Center"
+             VerticalOptions="Center"
+             Padding="10"
+             Grid.Column="0"
+             Grid.Row="2"
+             />
+            <Entry Placeholder="informe seu username"
+                x:Name="login"
+                 Grid.Row="2"
+                 Grid.Column="1"
+             />
 
+            <Label Text="Senha:"
+             HorizontalOptions="Center"
+             VerticalOptions="Center"
+             Padding="10"
+             Grid.Column="0"
+             Grid.Row="3"
+              />
 
+            <Entry Placeholder="Digite sua senha"
+             x:Name="senha"
+             Grid.Row="3"
+             Grid.Column="1"
+             IsPassword="True"
+              />
 
             <Button Text="Entrar"
                     x:Name="btnEntrarPartida"
                     Clicked="EntrarPartida"
-                    />
+             />
 
 
-                <Label Text="Cadastre-se"
+             <Label Text="Cadastre-se"
                    TextColor="Blue"
                    FontAttributes="Italic"
                        HorizontalOptions="Center"
@@ -25,7 +51,7 @@
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnLabelClicked" />
                     </Label.GestureRecognizers>
-                </Label>
+              </Label>
 
 
 

@@ -37,10 +37,9 @@ namespace Service
             return await _context.Pelada.FindAsync(id);
         }
 
-        public async Task<int> GetIdPelada(string codigo)
+        public int GetPeladaByCod(string codigo)
         {
-            return await _context.Pelada.Where(g => g.CodigoPelada == codigo)
-                .Select( g => g.IdPelada).FirstOrDefaultAsync();
+            return _context.Pelada.Where(p => p.CodigoPelada.Equals(codigo)).Select(g => g.IdPelada).FirstOrDefault();
         }
     }
 }
