@@ -58,7 +58,23 @@ namespace BuscarApi
 
         }
 
+        public async Task<List<ListaJogador>> GetAllJogadores()
+        {
 
+            List<ListaJogador> list = new List<ListaJogador> ();
+            var response = await _httpCliente.GetAsync("api/ListaJogador");
+            if (response.IsSuccessStatusCode)
+            {
+                string content = await response.Content.ReadAsStringAsync();
+                list = JsonConvert.DeserializeObject<List<ListaJogador>>(content);
+                return list;
+            }
+            else
+            {
+                return null;
+            }
+            
+        }
 
     }
 
@@ -70,5 +86,11 @@ namespace BuscarApi
         public string? PosicaoJogador { get; set; }
         public string? UserName { get; set; }
         public string? Senha { get; set; }
+    }
+
+    public class ListaJogador
+    {
+        public int JogadorIdJogador { get; set; }
+        public int PeladaIdPelada { get; set; }
     }
 }

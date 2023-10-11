@@ -80,6 +80,11 @@
 
 
 
+            <Button Text="Teste"
+                    Clicked="Teste"/>
+
+
+
         </VerticalStackLayout>
     </ScrollView>
 
