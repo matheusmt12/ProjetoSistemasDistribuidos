@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -25,25 +26,7 @@ namespace MauiApp1
 
         }
 
-        HttpClientHandler handler = new HttpClientHandler();
-        public async Task<string> GetDadosAPI()
-        {
-
-            var username = "matheusmt1";
-            var password = "12345678";
-            var response = await _httpClient.GetAsync($"api/Login/{username},{password}");
-            if (response.IsSuccessStatusCode)
-            {
-                string apiresult = await response.Content.ReadAsStringAsync();
-                var dados = JsonConvert.DeserializeObject<JogadorObject>(apiresult);
-                Console.WriteLine(dados);
-                return apiresult;
-            }
-            return $"Erro retorno";
-
-
-        }
-
+       
         public async Task<string> PostDados(DadosApi dadosApi)
         {
 
@@ -61,9 +44,23 @@ namespace MauiApp1
                 return "erro";
             }
         }
+
+        public async Task<int> GetPeladaByCod(string codigo)
+        {
+            var response = await _httpClient.GetAsync($"api/Pelada/Codigo/{codigo}");
+            if (response.IsSuccessStatusCode)
+            {
+                string apiresult = await response.Content.ReadAsStringAsync();
+                var dados = JsonConvert.DeserializeObject<int>(apiresult);
+                Console.WriteLine(dados);
+                return dados;
+             
+            }
+            return 0;
+
+        }
     }
 }
-
 
 public class DadosApi
 {

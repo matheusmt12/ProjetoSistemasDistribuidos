@@ -1,4 +1,6 @@
-﻿using MauiApp1.View;
+﻿using BuscarApi;
+using MauiApp1.View;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MauiApp1;
 
@@ -25,7 +27,17 @@ public partial class MainPage : ContentPage
 
 	private async void EntrarPartida(object sender, EventArgs e)
 	{
-		await Navigation.PushAsync(new Login());
+		Jogador jogadorApi = new Jogador();
+		string resposta = await jogadorApi.GetLogin(login.Text, senha.Text);
+		if (resposta.Equals("Encontrado"))
+		{
+            await Navigation.PushAsync(new CodigoPelada());
+        }
+		else
+		{
+            await DisplayAlert("Erro", "Usuário nao encontrado!", "Confirmar");
+        }
+		
 	}
 
     private async void OnLabelClicked(object sender, EventArgs e)
