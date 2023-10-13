@@ -48,6 +48,17 @@ namespace Service
 
         }
 
+        public bool GetByIdJogadorIdPelada(int idJogador, int idPelada)
+        {
+            var query = _context.Listajogadors
+                .Where(g => g.PeladaIdPelada == idPelada && g.JogadorIdJogador == idJogador).FirstOrDefault();
+
+            if (query == null) { return false; }
+            return true;
+
+
+        }
+
         public int GetIdPelada(string codigo)
         {
             try

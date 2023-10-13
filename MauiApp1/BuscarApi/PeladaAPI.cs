@@ -60,7 +60,7 @@ namespace MauiApp1
 
         }
 
-        public async Task<bool> InsertJogadorInPelada(ListaJogador listaJogador)
+        public async Task<string> InsertJogadorInPelada(ListaJogadorId listaJogador)
         {
             var jsonDados = Newtonsoft.Json.JsonConvert.SerializeObject(listaJogador);
             var content = new StringContent(jsonDados, System.Text.Encoding.UTF8, "application/json");
@@ -69,13 +69,13 @@ namespace MauiApp1
             if (response.IsSuccessStatusCode)
             {
                 var resposta = await response.Content.ReadAsStringAsync();
-                return resposta == "Sucesso" ? true : false;
+                return resposta;
             }
-            return false;
+            return "Problema";
         }
     }
 }
-public class ListaJogador
+public class ListaJogadorId
 {
     public int jogadorIdJogador { get; set; }
     public int peladaIdPelada { get; set; }

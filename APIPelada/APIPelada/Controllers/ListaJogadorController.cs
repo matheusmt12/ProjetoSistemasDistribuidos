@@ -52,7 +52,9 @@ namespace APIPelada.Controllers
             {
                 return BadRequest("Dados inválidos");
             }
+            bool have = _listaJogador.GetByIdJogadorIdPelada(listaJogadorModel.JogadorIdJogador, listaJogadorModel.PeladaIdPelada);
 
+            if (have) { return(Ok("OK")); }
             var jogadores = _mapper.Map<Listajogador>(listaJogadorModel);
             if(await _listaJogador.Create(jogadores))
             {

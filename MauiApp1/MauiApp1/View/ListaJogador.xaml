@@ -4,7 +4,7 @@
              x:Class="MauiApp1.View.ListaJogador"
              Title="ListaJogador">
     <VerticalStackLayout HorizontalOptions="CenterAndExpand" Padding="30">
-        <ListView x:Name="meuListView" WidthRequest="300">
+        <ListView x:Name="meuListView" WidthRequest="500">
             <!-- Defina a largura desejada aqui -->
             <ListView.ItemTemplate>
                 <DataTemplate>

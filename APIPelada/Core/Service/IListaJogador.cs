@@ -13,5 +13,7 @@ namespace Core.Service
         int GetIdPelada(string codigoPelada);
         IEnumerable<ListaJogadorDTO> GetAll(string codPartida);
 
+        bool GetByIdJogadorIdPelada (int idJogador,int idPelada);
+
     }
 }

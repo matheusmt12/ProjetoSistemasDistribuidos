@@ -16,16 +16,18 @@ public partial class CodigoPelada : ContentPage
 		var idPelada = await pelada.GetPeladaByCod(codPelada.Text);
 		if(idPelada > 0)
 		{
-            ListaJogador addLista = new ListaJogador();
+			ListaJogadorId addLista = new ListaJogadorId();
 			addLista.peladaIdPelada = idPelada;
 			addLista.jogadorIdJogador = this.idJogador;
-			bool resposta = await pelada.InsertJogadorInPelada(addLista);
-			if(resposta == true) {
+			string resposta = await pelada.InsertJogadorInPelada(addLista);
+			if(resposta == "Sucesso") {
                 await DisplayAlert("Sucesso", "Jogador Inserido na pelada!", "Confirmar");
+                await Navigation.PushAsync(new View.ListaJogador());
             }
-			else
+			else if(resposta == "OK")
 			{
-                await DisplayAlert("Erro", "Ocorreu um erro, não foi possível inserir!", "Confirmar");
+                await DisplayAlert("Sucesso",resposta, "Confirmar");
+				await Navigation.PushAsync(new View.ListaJogador());
             }
 		}
 		else
