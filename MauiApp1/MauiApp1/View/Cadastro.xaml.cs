@@ -33,6 +33,10 @@ public partial class Cadastro : ContentPage
                 await DisplayAlert("Sucesso", "Cadastro Feito!", "Comfirmar");
                 await Navigation.PushAsync(new MainPage());
             }
+            else
+            {
+                await DisplayAlert("Erro", response, "Comfirmar");
+            }
         }
     }
 }

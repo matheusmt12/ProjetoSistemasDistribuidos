@@ -10,6 +10,8 @@ namespace Core.Service
     {
         Task<bool>Create(Jogador jogador);
 
+        bool GetByUserName(string userName);
+
         Jogador GetJogador(string nome);
 
         Jogador Login(string username, string password);

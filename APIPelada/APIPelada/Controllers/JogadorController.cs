@@ -58,6 +58,10 @@ namespace APIPelada.Controllers
             {
                 return BadRequest("Dados inválidos, verifique se a senha tem menos de 8 caracteres");
             }
+
+            if (!_jogador.GetByUserName(value.UserName))
+                return BadRequest("O username ja esta sendo utilizado");
+
             var jogador = _mapper.Map<Jogador>(value);
             if (await _jogador.Create(jogador))
             {

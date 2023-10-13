@@ -28,13 +28,14 @@ namespace BuscarApi
             var contentStrig = new StringContent(jason, System.Text.Encoding.UTF8, "application/json");
 
             var response = await _httpCliente.PostAsync("api/Jogador", contentStrig);
-
-            if(response.IsSuccessStatusCode)
+            string resposta = await response.Content.ReadAsStringAsync();
+            if (response.IsSuccessStatusCode)
             {
-                string resposta = await response.Content.ReadAsStringAsync();
+                
                 return resposta;
             }
-            return "erro";
+
+            return resposta;
         }
 
         HttpClientHandler handler = new HttpClientHandler();

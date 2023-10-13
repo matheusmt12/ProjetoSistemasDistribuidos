@@ -35,6 +35,16 @@ namespace Service
             }
         }
 
+        public bool GetByUserName(string userName)
+        {
+            var query = _context.Jogadors
+                .Where(g => g.UserName == userName)
+                .FirstOrDefault();
+
+            if(query != null) { return true; }
+            return false;
+        }
+
         public Jogador? GetJogador(string nome)
         {
             try
