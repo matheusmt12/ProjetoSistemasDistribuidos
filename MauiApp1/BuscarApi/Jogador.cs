@@ -38,7 +38,7 @@ namespace BuscarApi
         }
 
         HttpClientHandler handler = new HttpClientHandler();
-        public async Task<string> GetLogin(string username, string senha)
+        public async Task<int> GetLogin(string username, string senha)
         {
 
             var response = await _httpCliente.GetAsync($"api/Login/{username},{senha}");
@@ -49,12 +49,12 @@ namespace BuscarApi
                 Console.WriteLine(dados);
                 if (dados.UserName.Equals(username) && dados.Senha.Equals(senha))
                 {
-                    return "Encontrado";
+                    int idJogador = dados.idJogador;
+                    return idJogador;
                 }
                   
             }
-            return $"Erro retorno";
-
+            return 0;
 
         }
 
@@ -66,6 +66,7 @@ namespace BuscarApi
 
     public class JogadorObject
     {
+        public int idJogador {  get; set; }
         public string? NomeJogador { get; set; }
         public string? PosicaoJogador { get; set; }
         public string? UserName { get; set; }

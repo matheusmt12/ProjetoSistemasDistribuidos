@@ -1,9 +1,13 @@
+using BuscarApi;
+
 namespace MauiApp1.View;
 
 public partial class CodigoPelada : ContentPage
 {
-	public CodigoPelada()
+    private int idJogador;
+    public CodigoPelada(int id)
 	{
+		this.idJogador = id;
 		InitializeComponent();
 	}
 	public async void EntrarPelada(object sender, EventArgs e)
@@ -12,7 +16,17 @@ public partial class CodigoPelada : ContentPage
 		var idPelada = await pelada.GetPeladaByCod(codPelada.Text);
 		if(idPelada > 0)
 		{
-            await DisplayAlert("Sucesso", "Pelada encontrado!", "Confirmar");
+            ListaJogador addLista = new ListaJogador();
+			addLista.peladaIdPelada = idPelada;
+			addLista.jogadorIdJogador = this.idJogador;
+			bool resposta = await pelada.InsertJogadorInPelada(addLista);
+			if(resposta == true) {
+                await DisplayAlert("Sucesso", "Jogador Inserido na pelada!", "Confirmar");
+            }
+			else
+			{
+                await DisplayAlert("Erro", "Ocorreu um erro, não foi possível inserir!", "Confirmar");
+            }
 		}
 		else
 		{

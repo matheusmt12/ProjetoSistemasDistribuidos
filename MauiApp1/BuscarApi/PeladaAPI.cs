@@ -59,7 +59,26 @@ namespace MauiApp1
             return 0;
 
         }
+
+        public async Task<bool> InsertJogadorInPelada(ListaJogador listaJogador)
+        {
+            var jsonDados = Newtonsoft.Json.JsonConvert.SerializeObject(listaJogador);
+            var content = new StringContent(jsonDados, System.Text.Encoding.UTF8, "application/json");
+
+            var response = await _httpClient.PostAsync("api/ListaJogador", content);
+            if (response.IsSuccessStatusCode)
+            {
+                var resposta = await response.Content.ReadAsStringAsync();
+                return resposta == "Sucesso" ? true : false;
+            }
+            return false;
+        }
     }
+}
+public class ListaJogador
+{
+    public int jogadorIdJogador { get; set; }
+    public int peladaIdPelada { get; set; }
 }
 
 public class DadosApi
