@@ -2,6 +2,7 @@
 using APIPelada.Model;
 using AutoMapper;
 using Core;
+using Core.DTO;
 using Core.Service;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,8 +30,8 @@ namespace APIPelada.Controllers
         [HttpGet]
         public async  Task<ActionResult> Get()
         {
-            var jogadores =  _listaJogador.GetAll();
-            var model = _mapper.Map<List<ListaJogadorModel>>(jogadores);
+            var jogadores =  _listaJogador.GetAll("123456");
+            var model = _mapper.Map<List<ListaJogadorDTO>>(jogadores);
             if (model.Count() != 0)
                 return Ok(model);
             return BadRequest("Não ha nenhum item ");

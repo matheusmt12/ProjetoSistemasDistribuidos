@@ -3,20 +3,39 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.View.ListaJogador"
              Title="ListaJogador">
-    <VerticalStackLayout>
-
-
-        <ListView x:Name="meuListView">
+    <VerticalStackLayout HorizontalOptions="CenterAndExpand" Padding="30">
+        <ListView x:Name="meuListView" WidthRequest="300">
+            <!-- Defina a largura desejada aqui -->
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Horizontal" Spacing="20">
-                            <Label Text="IdJogador: "/>
-                            <Label Text="{Binding JogadorIdJogador}" FontAttributes="Bold" />
-                            <Label Text="IdPelada: "/>
-                            <Label Text="{Binding PeladaIdPelada}" />
-                            
-                        </StackLayout>
+
+
+                        <Grid VerticalOptions="Center"
+                              HorizontalOptions="Center"
+                              ColumnSpacing="10"
+                              Padding="20"
+                              RowSpacing="10"
+                              >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <StackLayout Orientation="Horizontal" Spacing="20">
+                                <Label Text="Nome:" Grid.Column="0" Grid.Row="0"/>
+                                <Label Text="{Binding Nome }" FontAttributes="Bold" Grid.Column="1" Grid.Row="0" />
+                                <Label Text="Posicao:" Grid.Column="0" Grid.Row="1"/>
+                                <Label Text="{Binding Posicao}" Grid.Column="1" Grid.Row="1"/>
+                            </StackLayout>
+                        </Grid>
+
+
+
+
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

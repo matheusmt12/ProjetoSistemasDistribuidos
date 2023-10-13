@@ -6,9 +6,10 @@ public partial class ListaJogador : ContentPage
 {
 	public ListaJogador()
 	{
-        TesteList();
+
         InitializeComponent();
-	}
+        TesteList();
+    }
 
 
 

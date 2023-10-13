@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System;
 using System.Threading.Tasks;
+using Core.DTO;
 
 namespace Service
 {
@@ -34,12 +35,16 @@ namespace Service
             }
         }
 
-        public IEnumerable<Listajogador> GetAll()
+        public IEnumerable<ListaJogadorDTO> GetAll(string codPartida)
         {
-            return  _context.Listajogadors.ToList();
-
-
-
+            var query = _context.Listajogadors
+                .Where(g => g.PeladaIdPeladaNavigation.CodigoPelada == codPartida)
+                .Select(g => new ListaJogadorDTO
+                {
+                    Nome = g.JogadorIdJogadorNavigation.NomeJogador,
+                    Posicao = g.JogadorIdJogadorNavigation.PosicaoJogador
+                }).ToList();
+            return query;
 
         }
 
@@ -59,5 +64,6 @@ namespace Service
                 return 0;
             }
         }
+
     }
 }

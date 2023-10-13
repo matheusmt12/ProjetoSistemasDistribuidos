@@ -90,7 +90,7 @@ namespace BuscarApi
 
     public class ListaJogador
     {
-        public int JogadorIdJogador { get; set; }
-        public int PeladaIdPelada { get; set; }
+        public string? Nome { get; set; }
+        public string? Posicao { get; set; }
     }
 }
