@@ -17,5 +17,8 @@
     <MauiXaml Update="View\CodigoPelada.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="View\ListaJogador.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
   </ItemGroup>
 </Project>
