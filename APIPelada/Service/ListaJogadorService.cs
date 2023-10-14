@@ -76,5 +76,12 @@ namespace Service
             }
         }
 
+        public IEnumerable<Listajogador> GetAllJogadores(int idPelada)
+        {
+            var query = _context.Listajogadors.Where(g => g.PeladaIdPelada == idPelada).ToList();
+
+            return query;
+        }
+
     }
 }
