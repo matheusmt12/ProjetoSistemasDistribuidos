@@ -68,6 +68,9 @@
 
 
 
+            <Button Text="Teste"
+                    Clicked="Teste"
+                    />
             <Label Text="Cadastre-se"
                    TextColor="Blue"
                    FontAttributes="Italic"
@@ -77,7 +80,7 @@
                     <TapGestureRecognizer Tapped="OnLabelClicked" />
                 </Label.GestureRecognizers>
             </Label>
-            
+
         </VerticalStackLayout>
     </ScrollView>
 
