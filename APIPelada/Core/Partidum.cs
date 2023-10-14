@@ -13,6 +13,7 @@ namespace Core
         public int TimeIdTimeFora { get; set; }
         public int TimeIdTimeCasa { get; set; }
         public TimeSpan TempoDePartida { get; set; }
+        public bool? InicioPartida { get; set; }
 
         public virtual Time TimeIdTimeCasaNavigation { get; set; }
         public virtual Time TimeIdTimeForaNavigation { get; set; }

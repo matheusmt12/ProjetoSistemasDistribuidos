@@ -8,6 +8,6 @@
         public int PeladaIdPelada { get; set; }
         public int TimeIdTimeFora { get; set; }
         public int TimeIdTime { get; set; }
-
+        public bool? InicioPartida { get; set; }
     }
 }
