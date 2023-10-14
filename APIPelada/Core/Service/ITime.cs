@@ -8,6 +8,11 @@ namespace Core.Service
 {
     public interface ITime
     {
-        Task<bool> Create(Time time);
+        Task<int> Create(Time time);
+        Task<int> GetQtdTimes(int idPelada);
+        Task<bool> CreateTime(Timejogador timejogador);
+        IEnumerable<Time> GetTimes(int idPelada);
+        Task<bool> DeleteTime(int idTime);
+
     }
 }
