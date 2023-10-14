@@ -57,10 +57,11 @@ namespace APIPelada.Controllers
         }
 
         //// PUT api/<PartidadaController>/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
+        {
+
+        }
 
         //// DELETE api/<PartidadaController>/5
         //[HttpDelete("{id}")]
