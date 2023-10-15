@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -13,7 +15,8 @@ namespace Core
             PartidumTimeIdTimeForaNavigations = new HashSet<Partidum>();
             Timejogadors = new HashSet<Timejogador>();
         }
-
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdTime { get; set; }
         public string Nome { get; set; }
         public int PeladaIdPelada { get; set; }
