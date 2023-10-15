@@ -27,6 +27,10 @@ public partial class MainPage : ContentPage
 		
 	}
 
+	private async void Teste(object sender, EventArgs e)
+	{
+		await Navigation.PushAsync(new Cronometro());
+	}
     private async void OnLabelClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new Cadastro());
