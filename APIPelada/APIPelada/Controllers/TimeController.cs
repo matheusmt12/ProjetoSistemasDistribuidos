@@ -8,10 +8,15 @@ using System.Linq;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 public class Sorteio
 {
+    private Random random; // Declare o objeto Random como um campo de classe
+
+    public Sorteio()
+    {
+        random = new Random(); // Inicialize o objeto Random no construtor
+    }
     public int SortearJogador(List<Listajogador> listaJogador)
     {
-        int idJogador = 0, maxJogadores = 0;
-        Random random = new Random();
+        int idJogador = 0, maxJogadores = listaJogador.Count();
         if (maxJogadores > 0)
         {
             idJogador = random.Next(0, maxJogadores);
@@ -73,11 +78,12 @@ namespace APIPelada.Controllers
                 return BadRequest("Pelada não encontrada");
             }
             else{
-                int isTimes = await _time.GetQtdTimes(idPelada);
+                int isTimes = _time.GetQtdTimes(idPelada);
                 Sorteio sorteio = new Sorteio();
                 if (isTimes == 0)
                 {
-                    int quantidadeDeTimes = pelada.Listajogadors.Count() / pelada.QuantJogadorPorTime;
+                    List<Listajogador> listaJogador = _lista.GetAllJogadores(idPelada).ToList();
+                    int quantidadeDeTimes = listaJogador.Count() / pelada.QuantJogadorPorTime;
                     string nomeDosTimes = "ABCDEFGHIJKLMNOPQRSTUVXWYZ";
                   
                     
@@ -87,10 +93,11 @@ namespace APIPelada.Controllers
                             time.Nome = "Time " + nomeDosTimes[i];
                             time.Derrota = 0;
                             time.Vitorias = 0;
+                            time.PeladaIdPelada = idPelada;
                             var timeCreate = _mapper.Map<Time>(time);
                             int idTime = await _time.Create(timeCreate);
 
-                            List<Listajogador>listaJogador = _lista.GetAllJogadores(idPelada).ToList();
+                           
                             int qtdJogadorTime = pelada.QuantJogadorPorTime;
                             if(quantidadeDeTimes % 1 != 0 && i == 0)
                             {

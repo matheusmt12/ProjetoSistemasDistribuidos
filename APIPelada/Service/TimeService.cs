@@ -32,14 +32,13 @@ namespace Service
             }
         }
 
-        public async Task<int> GetQtdTimes(int idPelada)
+        public int GetQtdTimes(int idPelada)
         {
             try
             {
-                int count = await _context.Times
-                .Where(time => time.PeladaIdPelada == idPelada)
-                .CountAsync();
-                return count;
+                var query = _context.Times.Where(time => time.PeladaIdPelada == idPelada);
+                var list = query.ToList();
+                return list.Count;
             }
             catch { 
                 return 0; 
