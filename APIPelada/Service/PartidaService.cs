@@ -32,5 +32,19 @@ namespace Service
                 return false;
             }
         }
+
+        public async Task<bool> Update(Partidum partidum)
+        {
+            try
+            {
+                _context.Update(partidum);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

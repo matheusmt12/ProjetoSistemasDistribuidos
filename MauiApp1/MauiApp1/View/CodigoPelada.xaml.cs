@@ -41,4 +41,9 @@ public partial class CodigoPelada : ContentPage
 	{
 		await Navigation.PushAsync(new CriarPartida());
 	}
+
+	public async void TesteCriarPartida(object sender,EventArgs e)
+	{
+		await Navigation.PushAsync(new Partida());
+	}
 }
