@@ -119,11 +119,11 @@ namespace APIPelada.Controllers
                 else
                 {
                     var times = _time.GetTimes(idPelada);
+                    List<Listajogador> listaJogador = _lista.GetAllJogadores(idPelada).ToList();
                     foreach (var t in times)
                     {
                         await _time.DeleteTime(t.IdTime);
-                        int i = 0;
-                        List<Listajogador> listaJogador = _lista.GetAllJogadores(idPelada).ToList();
+                        int i = 0;                          
                         int qtdJogadorTime = pelada.QuantJogadorPorTime;
                         if (times.Count() % 1 != 0 && i == 0)
                         {
