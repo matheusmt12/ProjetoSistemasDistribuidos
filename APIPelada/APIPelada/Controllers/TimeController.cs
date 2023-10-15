@@ -6,6 +6,21 @@ using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+public class Sorteio
+{
+    public int SortearJogador(List<Listajogador> listaJogador)
+    {
+        int idJogador = 0, maxJogadores = 0;
+        Random random = new Random();
+        if (maxJogadores > 0)
+        {
+            idJogador = random.Next(0, maxJogadores);
+
+        }
+
+        return idJogador;
+    }
+}
 
 namespace APIPelada.Controllers
 {
@@ -26,24 +41,6 @@ namespace APIPelada.Controllers
             _mapper = mapper;
         }
 
-
-
-
-        // GET: api/<TimeController>
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
-
-        //// GET api/<TimeController>/5
-        //[HttpGet("{id}")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
-
-        // POST api/<TimeController>
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] TimeModel model)
         {
@@ -62,6 +59,7 @@ namespace APIPelada.Controllers
         }
 
         [HttpPost]
+        [Route("CreateTeams/{idPelada}")]
         public async Task<ActionResult> CreateTeams(int idPelada)
         {
             if (!ModelState.IsValid)
@@ -76,7 +74,7 @@ namespace APIPelada.Controllers
             }
             else{
                 int isTimes = await _time.GetQtdTimes(idPelada);
-
+                Sorteio sorteio = new Sorteio();
                 if (isTimes == 0)
                 {
                     int quantidadeDeTimes = pelada.Listajogadors.Count() / pelada.QuantJogadorPorTime;
@@ -100,7 +98,7 @@ namespace APIPelada.Controllers
                             }
                             for(int j = 0; j < qtdJogadorTime; j++)
                             {
-                                int idSorteado = SortearJogador(listaJogador);
+                                int idSorteado = sorteio.SortearJogador(listaJogador);
                                 Timejogador timeJogador = new();
                                 timeJogador.JogadorIdJogador = listaJogador[idSorteado].JogadorIdJogador;
                                 timeJogador.TimeIdTime = idTime;
@@ -126,7 +124,7 @@ namespace APIPelada.Controllers
                         }
                         for (int j = 0; j < qtdJogadorTime; j++)
                         {
-                            int idSorteado = SortearJogador(listaJogador);
+                            int idSorteado = sorteio.SortearJogador(listaJogador);
                             Timejogador timeJogador = new();
                             timeJogador.JogadorIdJogador = listaJogador[idSorteado].JogadorIdJogador;
                             timeJogador.TimeIdTime = t.IdTime;
@@ -144,17 +142,6 @@ namespace APIPelada.Controllers
 
         }
 
-        public int SortearJogador(List<Listajogador> listaJogador)
-        {
-            int idJogador = 0, maxJogadores = 0;
-            Random random = new Random();
-            if (maxJogadores > 0)
-            {
-                idJogador = random.Next(0, maxJogadores); 
-
-            }
-            
-            return idJogador;
-        }
+      
     }
 }
