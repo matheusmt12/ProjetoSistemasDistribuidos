@@ -57,7 +57,7 @@ namespace APIPelada.Controllers
         }
 
         //// PUT api/<PartidadaController>/5
-        [HttpPut("{id}")]
+        [HttpPut()]
         public async Task<ActionResult> Put(int id, [FromBody] PartidaModel model)
         {
             if(!ModelState.IsValid) { return BadRequest("Algum atributo esta invalido"); }

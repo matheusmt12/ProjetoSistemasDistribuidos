@@ -17,8 +17,8 @@ namespace BuscarApi
 
         public async Task<DadosPartida> PostPartida(DadosPartida partida)
         {
-            var jason = Newtonsoft.Json.JsonConvert.SerializeObject(partida);
-            var content = new StringContent(jason, System.Text.Encoding.UTF8, "application/json");
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(partida);
+            var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
             var response = await _httpClient.PostAsync("/api/Partidada", content);
             string resposta = await response.Content.ReadAsStringAsync();
             DadosPartida respostaReceive = Newtonsoft.Json.JsonConvert.DeserializeObject<DadosPartida>(resposta);
@@ -26,6 +26,16 @@ namespace BuscarApi
             {
                 return respostaReceive;
             }
+            return null;
+        }
+        public async Task<DadosPartida> PutPartida(DadosPartida partida)
+        {
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(partida);
+            var content = new StringContent(json,System.Text.Encoding.UTF8, "application/json");
+            var response = await _httpClient.PutAsync($"api/Partidada?id={partida.IdPartida}", content);
+            string resposta = await response.Content.ReadAsStringAsync();
+            DadosPartida respostaReceive = Newtonsoft.Json.JsonConvert.DeserializeObject<DadosPartida>(resposta);
+            if(response.IsSuccessStatusCode) { return respostaReceive; }
             return null;
         }
 
