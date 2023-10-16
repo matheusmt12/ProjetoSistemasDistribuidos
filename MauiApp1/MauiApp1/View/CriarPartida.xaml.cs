@@ -37,14 +37,5 @@ public partial class CriarPartida : ContentPage
             textoCodigoPartida.Text = receive + ": " + "O código da pelada é " + codigo;
 
 
-       // JogadorObject jogador = new JogadorObject();
-
-       // jogador.CodigoTorneio = codigo;
-       // jogador.NomeJogador = nomeJogador.Text;
-       // jogador.Status = "Dono";
-       // jogador.PosicaoJogador = (string)pickerJogador.SelectedItem;
-
-       //await  criarJogador.PostDados(jogador);
-
     }
 }

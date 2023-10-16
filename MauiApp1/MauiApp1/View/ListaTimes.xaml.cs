@@ -4,69 +4,32 @@ namespace MauiApp1.View;
 
 public partial class ListaTimes : ContentPage
 {
-	public ListaTimes()
-	{
-		InitializeComponent();
-        AddTeamsToLayout();
+    protected int idPelada;
+    protected List<TimeJogadores> lista = new List<TimeJogadores>();
 
+    public ListaTimes(int idPelada, List<TimeJogadores> lista)
+	{
+        this.idPelada = idPelada;
+		InitializeComponent();
+        this.lista = lista;
+        AddTeamsToLayout(this.lista);
     }
 
     private async void OnGenerateTeamsClicked(object sender, EventArgs e)
     {
-        //TimeAPI timeAPI = new TimeAPI();
-        List<TimeJogadores> lista = new List<TimeJogadores>();
-        lista = GenerateTeamsData();
+        TimeAPI timeAPI = new TimeAPI(); 
+        this.lista = new List<TimeJogadores>();
+        this.lista = await timeAPI.GetTeamsAsync(this.idPelada);
+
+        TeamsFlexLayout.Children.Clear();
+        AddTeamsToLayout(this.lista);
 
         //TeamsCollectionView.ItemsSource = lista;
-    }
+    }   
 
-    private List<TimeJogadores> GenerateTeamsData()
+    private void AddTeamsToLayout(List<TimeJogadores> times)
     {
-        // Coloque o código para gerar times e jogadores aqui
-        // Este método deve retornar uma lista de objetos TimeJogadoreDTO preenchida
-        // com os times e jogadores gerados
-        // Substitua isso pelo seu código real
-        return new List<TimeJogadores>
-        {
-            new TimeJogadores
-            {
-                nomeDoTime = "Time A",
-                nomeDosJogadores = new List<string> { "jose", "john", "matheus", "guilherme", "ruan" }
-            },
-            new TimeJogadores
-            {
-                nomeDoTime = "Time B",
-                nomeDosJogadores = new List<string> { "lucas", "moises", "maria", "otaci", "junio" }
-            },
-             new TimeJogadores
-            {
-                nomeDoTime = "Time C",
-                nomeDosJogadores = new List<string> { "lucas", "moises", "maria", "otaci", "junio" }
-            }
-            
-        };
-    }
-
-    private void AddTeamsToLayout()
-    {
-        var times = new List<TimeJogadores>
-        {
-            new TimeJogadores
-            {
-                nomeDoTime = "Time A",
-                nomeDosJogadores = new List<string> { "jose", "john", "matheus", "guilherme", "ruan" }
-            },
-            new TimeJogadores
-            {
-                nomeDoTime = "Time B",
-                nomeDosJogadores = new List<string> { "lucas", "moises", "maria", "otaci", "junio" }
-            },
-            new TimeJogadores
-            {
-                nomeDoTime = "Time C",
-                nomeDosJogadores = new List<string> { "lucas", "moises", "maria", "otaci", "junio" }
-            }
-        };
+      
 
         foreach (var time in times)
         {
