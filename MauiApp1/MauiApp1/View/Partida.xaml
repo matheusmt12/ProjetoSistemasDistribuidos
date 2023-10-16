@@ -51,6 +51,8 @@
 
 
         </Grid>
-
+        <!--<Button
+            Text="Atualizar pag"
+            Clicked="Atualizar"/>-->
     </VerticalStackLayout>
 </ContentPage>

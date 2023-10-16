@@ -4,9 +4,11 @@ namespace MauiApp1.View;
 
 public partial class ListaJogador : ContentPage
 {
-	public ListaJogador()
-	{
 
+	private readonly string _codPartida;
+	public ListaJogador(string codPartida)
+	{
+		_codPartida = codPartida;
         InitializeComponent();
         TesteList();
     }
@@ -20,7 +22,7 @@ public partial class ListaJogador : ContentPage
 
 		Jogador jogador = new Jogador();
 
-		lista = await jogador.GetAllJogadores();
+		lista = await jogador.GetAllJogadores(_codPartida);
 
 		meuListView.ItemsSource = lista;
 	}

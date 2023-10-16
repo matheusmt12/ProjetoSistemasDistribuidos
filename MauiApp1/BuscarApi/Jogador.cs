@@ -59,11 +59,11 @@ namespace BuscarApi
 
         }
 
-        public async Task<List<ListaJogador>> GetAllJogadores()
+        public async Task<List<ListaJogador>> GetAllJogadores(string codPartida)
         {
 
             List<ListaJogador> list = new List<ListaJogador> ();
-            var response = await _httpCliente.GetAsync("api/ListaJogador");
+            var response = await _httpCliente.GetAsync($"api/ListaJogador/{codPartida}");
             if (response.IsSuccessStatusCode)
             {
                 string content = await response.Content.ReadAsStringAsync();
