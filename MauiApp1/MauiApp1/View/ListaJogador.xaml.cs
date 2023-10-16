@@ -25,5 +25,10 @@ public partial class ListaJogador : ContentPage
 		lista = await jogador.GetAllJogadores(_codPartida);
 
 		meuListView.ItemsSource = lista;
+    }
+
+	public async void GerarTimes(object sander, EventArgs e)
+	{
+
 	}
 }

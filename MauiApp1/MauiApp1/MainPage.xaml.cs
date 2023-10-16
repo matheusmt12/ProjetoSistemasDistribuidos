@@ -15,7 +15,7 @@ public partial class MainPage : ContentPage
 	private async void EntrarPartida(object sender, EventArgs e)
 	{
 		Jogador jogadorApi = new Jogador();
-		int idJogador = await jogadorApi.GetLogin(login.Text, senha.Text);
+        int idJogador = await jogadorApi.GetLogin(login.Text, senha.Text);
 		if (idJogador > 0)
 		{
             await Navigation.PushAsync(new CodigoPelada(idJogador));

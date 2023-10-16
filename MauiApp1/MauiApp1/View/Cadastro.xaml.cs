@@ -13,6 +13,8 @@ public partial class Cadastro : ContentPage
     {
         Jogador jogadorApi = new Jogador();
 
+
+        
         if (senha1.Text.Count() < 6)
         {
             await DisplayAlert("Atenção", "A Senha deve ter no minimo 6 caracteres", "OK");

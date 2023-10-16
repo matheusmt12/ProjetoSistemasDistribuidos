@@ -6,7 +6,7 @@
     
     <ScrollView HorizontalOptions="Center">
         <FlexLayout Direction="Column" >
-            <ListView x:Name="meuListView" WidthRequest="500">
+            <ListView x:Name="meuListView">
                 <!-- Defina a largura desejada aqui -->
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -25,16 +25,19 @@
                                     <RowDefinition />
                                 </Grid.RowDefinitions>
                                 <StackLayout Orientation="Horizontal" Spacing="20">
-                                    <Label Text="Nome:" Grid.Column="0" Grid.Row="0"/>
-                                    <Label Text="{Binding Nome }" FontAttributes="Bold" Grid.Column="1" Grid.Row="0" />
-                                    <Label Text="Posicao:" Grid.Column="0" Grid.Row="1"/>
-                                    <Label Text="{Binding Posicao}" Grid.Column="1" Grid.Row="1"/>
+                                    <Label Text="Nome:"  TextColor="Blue"/>
+                                    <Label Text="{Binding Nome }" FontAttributes="Bold"  TextColor="Blue"/>
+                                    <Label Text="Posicao:" Grid.Column="0" Grid.Row="1" TextColor="Blue"/>
+                                    <Label Text="{Binding Posicao}"  TextColor="Blue"/>
                                 </StackLayout>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+
         </FlexLayout>
     </ScrollView>
+    <!--<Button  Text="Gerar Times"
+                     Clicked="GerarTimes"/>-->
 </ContentPage>
