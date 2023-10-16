@@ -9,9 +9,13 @@
         <Label Text="Tempo 6:40 " />
         <Label Text="Partida"/>
 
-        <Button Text="Alterar"
-                x:Name="btnAlterar"
-                Clicked="Alterar"
+        <Button Text="Casa Marca"
+                x:Name="btnAlterarCasa"
+                Clicked="Casa"
+            />
+        <Button Text="Fora Marca"
+                x:Name="btnAlterarFora"
+                Clicked="Fora"
             />
 
         <Grid HorizontalOptions="Center"

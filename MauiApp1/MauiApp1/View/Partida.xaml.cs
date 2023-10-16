@@ -9,7 +9,8 @@ public partial class Partida : ContentPage
     private Stopwatch _stopwatch;
     private bool partidaCriada;
     private DadosPartida dadosPartida;
-
+    private int casa = 0,fora = 0;
+    //private int fora
     public Partida()
     {
         dadosPartida = new DadosPartida();
@@ -47,10 +48,11 @@ public partial class Partida : ContentPage
 
     }
 
-    public async void Alterar(object sender, EventArgs e)
+    public async void Casa(object sender, EventArgs e)
     {
         PartidaAPI partidaAPI = new PartidaAPI();
-        dadosPartida.PlacarTimeCasa = "2";
+        casa += 1;
+        dadosPartida.PlacarTimeCasa = (string)casa.ToString();
         await partidaAPI.PutPartida(dadosPartida);
 
         Device.BeginInvokeOnMainThread(() =>
@@ -62,6 +64,21 @@ public partial class Partida : ContentPage
         });
     }
 
+    public async void Fora(object sender, EventArgs e)
+    {
+        PartidaAPI partidaAPI = new PartidaAPI();
+        fora += 1;
+        dadosPartida.PlacarTimeFora =(string)fora.ToString();
+        await partidaAPI.PutPartida(dadosPartida);
+
+        Device.BeginInvokeOnMainThread(() =>
+        {
+            time1.Text = dadosPartida.TimeIdTimeCasa.ToString();
+            time2.Text = dadosPartida.TimeIdTimeFora.ToString();
+            placarT1.Text = dadosPartida.PlacarTimeCasa;
+            placarT2.Text = dadosPartida.PlacarTimeFora;
+        });
+    }
 
 
 }
