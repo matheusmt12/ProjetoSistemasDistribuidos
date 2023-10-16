@@ -54,12 +54,8 @@ namespace APIPelada.Controllers
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] JogadorModel value)
         {
-            if (!ModelState.IsValid || value.Senha.Count() < 8)
-            {
-                return BadRequest("Dados inválidos, verifique se a senha tem menos de 8 caracteres");
-            }
 
-            if (!_jogador.GetByUserName(value.UserName))
+            if (_jogador.GetByUserName(value.UserName))
                 return BadRequest("O username ja esta sendo utilizado");
 
             var jogador = _mapper.Map<Jogador>(value);

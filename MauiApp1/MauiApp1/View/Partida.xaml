@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.View.Partida"
+             Title="Partida">
+    <VerticalStackLayout>
+
+
+        <Label Text="Tempo 6:40 " />
+        <Label Text="Partida"/>
+
+        <Button Text="Casa Marca"
+                x:Name="btnAlterarCasa"
+                Clicked="Casa"
+            />
+        <Button Text="Fora Marca"
+                x:Name="btnAlterarFora"
+                Clicked="Fora"
+            />
+
+        <Grid HorizontalOptions="Center"
+              VerticalOptions="Center"
+              ColumnSpacing="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Label Text=""
+                   x:Name="time1"
+                   Grid.Row="0"
+                   Grid.Column="0"/>
+            <Label Text=""
+                   x:Name="placarT1"
+                   Grid.Row="0"
+                   Grid.Column="1"/>
+            <Label Text="X"
+                   x:Name="vs"
+                   Grid.Row="0"
+                   Grid.Column="2"/>
+            <Label Text=""
+                   x:Name="time2"
+                   Grid.Row="0"
+                   Grid.Column="3"/>
+            <Label Text=""
+                   x:Name="placarT2"
+                   Grid.Row="0"
+                   Grid.Column="4"/>
+
+
+        </Grid>
+        <!--<Button
+            Text="Atualizar pag"
+            Clicked="Atualizar"/>-->
+    </VerticalStackLayout>
+</ContentPage>
