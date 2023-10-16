@@ -101,6 +101,7 @@ namespace APIPelada.Controllers
                         var timeCreate = _mapper.Map<Time>(time);
                         int idTime = await _time.Create(timeCreate);
                         TimeJogadoreDTO timeJogadore = new();
+                        timeJogadore.idTime = idTime;
                         timeJogadore.NomeDoTime = time.Nome;
 
                         int qtdJogadorTime = pelada.QuantJogadorPorTime;
@@ -138,6 +139,7 @@ namespace APIPelada.Controllers
                             qtdJogadorTime++;
                         }
                         TimeJogadoreDTO timeJogadore = new();
+                        timeJogadore.idTime = t.IdTime;
                         timeJogadore.NomeDoTime = t.Nome;
                         for (int j = 0; j < qtdJogadorTime; j++)
                         {
