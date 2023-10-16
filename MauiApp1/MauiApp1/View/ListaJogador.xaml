@@ -3,42 +3,38 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.View.ListaJogador"
              Title="ListaJogador">
-    <VerticalStackLayout HorizontalOptions="CenterAndExpand" Padding="30">
-        <ListView x:Name="meuListView" WidthRequest="500">
-            <!-- Defina a largura desejada aqui -->
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-
-
-                        <Grid VerticalOptions="Center"
-                              HorizontalOptions="Center"
-                              ColumnSpacing="10"
-                              Padding="20"
-                              RowSpacing="10"
-                              >
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition />
-                                <RowDefinition />
-                            </Grid.RowDefinitions>
-                            <StackLayout Orientation="Horizontal" Spacing="20">
-                                <Label Text="Nome:" Grid.Column="0" Grid.Row="0"/>
-                                <Label Text="{Binding Nome }" FontAttributes="Bold" Grid.Column="1" Grid.Row="0" />
-                                <Label Text="Posicao:" Grid.Column="0" Grid.Row="1"/>
-                                <Label Text="{Binding Posicao}" Grid.Column="1" Grid.Row="1"/>
-                            </StackLayout>
-                        </Grid>
-
-
-
-
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </VerticalStackLayout>
+    
+    <ScrollView HorizontalOptions="Center">
+        <FlexLayout Direction="Column" >
+            <ListView x:Name="meuListView" WidthRequest="500">
+                <!-- Defina a largura desejada aqui -->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid VerticalOptions="Center"
+                                  HorizontalOptions="Center"
+                                  ColumnSpacing="10"
+                                  Padding="20"
+                                  RowSpacing="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <StackLayout Orientation="Horizontal" Spacing="20">
+                                    <Label Text="Nome:" Grid.Column="0" Grid.Row="0"/>
+                                    <Label Text="{Binding Nome }" FontAttributes="Bold" Grid.Column="1" Grid.Row="0" />
+                                    <Label Text="Posicao:" Grid.Column="0" Grid.Row="1"/>
+                                    <Label Text="{Binding Posicao}" Grid.Column="1" Grid.Row="1"/>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </FlexLayout>
+    </ScrollView>
 </ContentPage>

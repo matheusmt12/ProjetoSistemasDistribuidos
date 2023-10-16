@@ -34,7 +34,8 @@ public partial class CriarPartida : ContentPage
         dadosApi.Local = nomeLocal.Text;
         string receive = await dadosParaEnviar.PostDados(dadosApi);
         if (receive == "Sucesso")
-            textoCodigoPartida.Text = receive + ": " + "O código da pelada é " + codigo;
+            //textoCodigoPartida.Text = receive + ": " + "O código da pelada é " + codigo;
+            await DisplayAlert("Sucesso", "O código da pelada é " + codigo,"Confirmar");
 
 
        // JogadorObject jogador = new JogadorObject();
