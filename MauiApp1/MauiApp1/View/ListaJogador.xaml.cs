@@ -10,21 +10,28 @@ public partial class ListaJogador : ContentPage
     {
         this.idPelada = idPelada;
         InitializeComponent();
+
         _codPartida = codPartida;
+        ListaJogadore();
     }
-    private async void OnGenerateTeamsClicked(object sender, EventArgs e)
+    private async void GerarTimes(object sender, EventArgs e)
     {
         TimeAPI timeAPI = new TimeAPI();
         List<TimeJogadores> lista = new List<TimeJogadores>();
         lista = await timeAPI.GetTeamsAsync(this.idPelada);
         await Navigation.PushAsync(new ListaTimes(idPelada, lista));
+       
     }
 
-		meuListView.ItemsSource = lista;
+	
+    public async void ListaJogadore()
+    {
+        Jogador jogador = new Jogador();
+        List<BuscarApi.ListaJogador> list = new List<BuscarApi.ListaJogador>();
+        list = await jogador.GetAllJogadores(_codPartida);
+        meuListView.ItemsSource = list;
+
     }
 
-	public async void GerarTimes(object sander, EventArgs e)
-	{
 
-	}
 }

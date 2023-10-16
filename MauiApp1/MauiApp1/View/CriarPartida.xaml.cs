@@ -44,7 +44,7 @@ public partial class CriarPartida : ContentPage
 
             if (await pelada.InsertJogadorInPelada(listaJogador) == "Sucesso")
             {
-                await Navigation.PushAsync(new View.ListaJogador(codigo));
+                await Navigation.PushAsync(new View.ListaJogador(listaJogador.peladaIdPelada,codigo));
                 
             }
         }

@@ -35,9 +35,9 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
+            <Button  Text="Gerar Times"
+                 Clicked="GerarTimes"/>
         </FlexLayout>
     </ScrollView>
-    <!--<Button  Text="Gerar Times"
-                     Clicked="GerarTimes"/>-->
+    
 </ContentPage>
