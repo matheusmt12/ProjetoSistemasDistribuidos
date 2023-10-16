@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.View.ListaTimes"
+             Title="ListaTimes">
+    <ScrollView Padding="0,20,0,0">
+        <StackLayout Spacing="20">
+            <!-- Espaçamento vertical entre os times -->
+            <Button Text="Gerar Times" Clicked="OnGenerateTeamsClicked" />
+            <FlexLayout x:Name="TeamsFlexLayout"
+                        Direction="Column"
+                        AlignItems="Start"
+                        JustifyContent="Start"
+                        AlignContent="Start">
+            </FlexLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

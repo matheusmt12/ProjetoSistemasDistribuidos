@@ -30,8 +30,5 @@
           Grid.ColumnSpan="2"
           Grid.Row="5"/>
 
-
-        <Button Text="Teste Criar Partida"
-                Clicked="TesteCriarPartida"/>
     </VerticalStackLayout>
 </ContentPage>
