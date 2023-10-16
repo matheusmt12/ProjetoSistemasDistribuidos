@@ -24,7 +24,7 @@ public partial class ListaTimes : ContentPage
         TeamsFlexLayout.Children.Clear();
         AddTeamsToLayout(this.lista);
 
-        //TeamsCollectionView.ItemsSource = lista;
+       
     }   
 
     private void AddTeamsToLayout(List<TimeJogadores> times)
@@ -65,8 +65,8 @@ public partial class ListaTimes : ContentPage
     }
 
 
-    public async void gerarPartida()
+    public async void gerarPartida(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new View.Partida())
+        await Navigation.PushAsync(new Partida(lista));
     }
 }

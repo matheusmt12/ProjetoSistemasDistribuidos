@@ -1,6 +1,6 @@
 using BuscarApi;
 using System.Diagnostics;
-using Windows.ApplicationModel.Activation;
+
 
 namespace MauiApp1.View;
 
@@ -55,12 +55,6 @@ public partial class Partida : ContentPage
             TimeIdTimeFora = fora,
         };
         dadosPartida = await partidaAPI.PostPartida(dadosPartida);
-
-        time1.Text = dadosPartida.TimeIdTimeCasa.ToString();
-        time2.Text = dadosPartida.TimeIdTimeFora.ToString();
-        placarT1.Text = dadosPartida.PlacarTimeCasa;
-        placarT2.Text = dadosPartida.PlacarTimeFora;
-
         Device.BeginInvokeOnMainThread(() =>
         {
             time1.Text = dadosPartida.TimeIdTimeCasa.ToString();
@@ -103,5 +97,11 @@ public partial class Partida : ContentPage
         });
     }
 
+    /*
+     
+     placarT1 > placarT2
+     
+     
+     */
 
 }
