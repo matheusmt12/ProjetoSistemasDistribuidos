@@ -1,5 +1,6 @@
 using BuscarApi;
 using System.Diagnostics;
+using Windows.ApplicationModel.Activation;
 
 namespace MauiApp1.View;
 
@@ -9,18 +10,40 @@ public partial class Partida : ContentPage
     private Stopwatch _stopwatch;
     private bool partidaCriada;
     private DadosPartida dadosPartida;
+    private List<TimeJogadores>  lista = new List<TimeJogadores>();
     private int casa = 0,fora = 0;
     //private int fora
-    public Partida()
+    public Partida(List<TimeJogadores> lista)
     {
         dadosPartida = new DadosPartida();
+        lista = lista;
         CriarPartida();
         partidaCriada = true;
         InitializeComponent();
     }
 
+    public int Sortear (int count)
+    {
+        Random random = new Random();
+
+        return random.Next(count + 1 );
+
+    }
+    
     public async void CriarPartida()
     {
+        Stack<int> array = new Stack<int>();
+        int antCasa = 0;
+        int antFora = 0;
+        foreach (var item in lista)
+        {
+            int sorteio = Sortear(lista.Count());
+            while (!array.Contains(sorteio))
+            {
+                array.Push(sorteio);
+            }
+        }
+        
         PartidaAPI partidaAPI = new PartidaAPI();
         dadosPartida = new DadosPartida
         {
@@ -28,8 +51,8 @@ public partial class Partida : ContentPage
             PlacarTimeCasa = "0",
             PlacarTimeFora = "0",
             TempoDePartida = DateTime.Now,
-            TimeIdTimeCasa = 1,
-            TimeIdTimeFora = 2,
+            TimeIdTimeCasa = casa,
+            TimeIdTimeFora = fora,
         };
         dadosPartida = await partidaAPI.PostPartida(dadosPartida);
 

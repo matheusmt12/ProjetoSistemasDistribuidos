@@ -63,4 +63,10 @@ public partial class ListaTimes : ContentPage
             TeamsFlexLayout.Children.Add(stackLayout);
         }
     }
+
+
+    public async void gerarPartida()
+    {
+        await Navigation.PushAsync(new View.Partida())
+    }
 }

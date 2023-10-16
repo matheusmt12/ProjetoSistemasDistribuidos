@@ -10,7 +10,7 @@ namespace BuscarApi
 {
     public class TimeJogadores
     {
-        public int? idTime {  get; set; }
+        public int idTime {  get; set; }
         public string? nomeDoTime { get; set; }
         public List<string>? nomeDosJogadores { get; set; }
     }

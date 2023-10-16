@@ -12,7 +12,12 @@
                         AlignItems="Start"
                         JustifyContent="Start"
                         AlignContent="Start">
+                
             </FlexLayout>
+            <Button Text=" Gerear partida"
+                    Clicked="gerarPartida"/>
         </StackLayout>
+
     </ScrollView>
+    
 </ContentPage>
