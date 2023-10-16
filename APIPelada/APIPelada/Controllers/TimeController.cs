@@ -66,7 +66,7 @@ namespace APIPelada.Controllers
             return BadRequest("Algo deu errado");
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("CreateTeams/{idPelada}")]
         public async Task<ActionResult> CreateTeams(int idPelada)
         {
