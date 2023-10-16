@@ -9,5 +9,6 @@ namespace Core.Service
     public interface IPartida
     {
         Task<bool> Create(Partidum partidum);
+        Task<bool> Update(Partidum partidum);
     }
 }

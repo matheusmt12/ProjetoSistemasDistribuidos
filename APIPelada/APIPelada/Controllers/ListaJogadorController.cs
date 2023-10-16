@@ -27,10 +27,10 @@ namespace APIPelada.Controllers
 
 
         //GET: api/<ListaJogadorController>
-        [HttpGet]
-        public async  Task<ActionResult> Get()
+        [HttpGet("{codPartida}")]
+        public async  Task<ActionResult> Get(string codPartida)
         {
-            var jogadores =  _listaJogador.GetAll("abc");
+            var jogadores =  _listaJogador.GetAll(codPartida);
             var model = _mapper.Map<List<ListaJogadorDTO>>(jogadores);
             if (model.Count() != 0)
                 return Ok(model);

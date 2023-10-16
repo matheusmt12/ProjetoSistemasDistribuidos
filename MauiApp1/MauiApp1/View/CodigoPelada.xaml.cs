@@ -22,12 +22,12 @@ public partial class CodigoPelada : ContentPage
 			string resposta = await pelada.InsertJogadorInPelada(addLista);
 			if(resposta == "Sucesso") {
                 await DisplayAlert("Sucesso", "Jogador Inserido na pelada!", "Confirmar");
-                await Navigation.PushAsync(new View.ListaJogador(idPelada));
+                await Navigation.PushAsync(new View.ListaJogador(idPelada, codPelada.Text));
             }
 			else if(resposta == "OK")
 			{
                 await DisplayAlert("Sucesso",resposta, "Confirmar");
-				await Navigation.PushAsync(new View.ListaJogador(idPelada));
+				await Navigation.PushAsync(new View.ListaJogador(idPelada, codPelada.Text));
             }
 		}
 		else

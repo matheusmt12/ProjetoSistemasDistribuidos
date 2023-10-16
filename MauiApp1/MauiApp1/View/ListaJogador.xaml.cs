@@ -5,11 +5,12 @@ namespace MauiApp1.View;
 public partial class ListaJogador : ContentPage
 {
     protected int idPelada;
-    public ListaJogador(int idPelada)
+    protected string _codPartida;
+    public ListaJogador(int idPelada, string codPartida)
     {
         this.idPelada = idPelada;
         InitializeComponent();
-        TesteList();
+        _codPartida = codPartida;
     }
     private async void OnGenerateTeamsClicked(object sender, EventArgs e)
     {
@@ -19,16 +20,4 @@ public partial class ListaJogador : ContentPage
         await Navigation.PushAsync(new ListaTimes(idPelada, lista));
     }
 
-
-    public async void TesteList()
-    {
-
-        List<BuscarApi.ListaJogador> lista = new List<BuscarApi.ListaJogador>();
-
-        Jogador jogador = new Jogador();
-
-        lista = await jogador.GetAllJogadores();
-
-        meuListView.ItemsSource = lista;
-    }
 }

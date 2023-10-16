@@ -12,7 +12,8 @@ namespace Core
         public string PlacarTimeFora { get; set; }
         public int TimeIdTimeFora { get; set; }
         public int TimeIdTimeCasa { get; set; }
-        public TimeSpan TempoDePartida { get; set; }
+        public DateTime TempoDePartida { get; set; }
+        public bool? InicioPartida { get; set; }
 
         public virtual Time TimeIdTimeCasaNavigation { get; set; }
         public virtual Time TimeIdTimeForaNavigation { get; set; }
