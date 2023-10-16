@@ -9,11 +9,11 @@ using System.Linq;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 public class Sorteio
 {
-    private Random random; // Declare o objeto Random como um campo de classe
+    private Random random; 
 
     public Sorteio()
     {
-        random = new Random(); // Inicialize o objeto Random no construtor
+        random = new Random(); 
     }
     public int SortearJogador(List<Listajogador> listaJogador)
     {
