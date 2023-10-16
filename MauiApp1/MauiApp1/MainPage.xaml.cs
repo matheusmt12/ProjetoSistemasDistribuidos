@@ -36,5 +36,10 @@ public partial class MainPage : ContentPage
         await Navigation.PushAsync(new Cadastro());
     }
 
+	private async void TesteLista(object sender, EventArgs e)
+	{
+		await Navigation.PushAsync(new ListaTimes());
+	}
+
 }
 

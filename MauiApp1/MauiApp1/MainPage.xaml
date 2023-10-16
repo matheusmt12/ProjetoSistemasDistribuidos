@@ -80,7 +80,9 @@
                     <TapGestureRecognizer Tapped="OnLabelClicked" />
                 </Label.GestureRecognizers>
             </Label>
-
+            <Button Text="TesteLista"
+                    Clicked="TesteLista"
+             />
         </VerticalStackLayout>
     </ScrollView>
 
