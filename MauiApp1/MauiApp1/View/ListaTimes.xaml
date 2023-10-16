@@ -3,29 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.View.ListaTimes"
              Title="ListaTimes">
-    <ContentPage.Content>
-        <StackLayout>
+    <ScrollView Padding="0,20,0,0">
+        <StackLayout Spacing="20">
+            <!-- Espaçamento vertical entre os times -->
             <Button Text="Gerar Times" Clicked="OnGenerateTeamsClicked" />
-            <CollectionView x:Name="TeamsCollectionView" SelectionMode="None"  HeightRequest="1000">
-                <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Vertical" Span="5" />
-                </CollectionView.ItemsLayout>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout>
-                            <Label Text="{Binding nomeDoTime}" />
-                            <Label Text="Jogadores:" FontAttributes="Bold" />
-                            <CollectionView ItemsSource="{Binding nomeDosJogadores}">
-                                <CollectionView.ItemTemplate>
-                                    <DataTemplate>
-                                        <Label Text="{Binding}" />
-                                    </DataTemplate>
-                                </CollectionView.ItemTemplate>
-                            </CollectionView>
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+            <FlexLayout x:Name="TeamsFlexLayout"
+                        Direction="Column"
+                        AlignItems="Start"
+                        JustifyContent="Start"
+                        AlignContent="Start">
+            </FlexLayout>
         </StackLayout>
-    </ContentPage.Content>
+    </ScrollView>
 </ContentPage>
