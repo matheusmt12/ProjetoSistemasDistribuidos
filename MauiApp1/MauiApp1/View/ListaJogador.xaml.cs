@@ -20,12 +20,19 @@ public partial class ListaJogador : ContentPage
         List<TimeJogadores> lista = new List<TimeJogadores>();
 
         lista = await timeAPI.GetTeamsAsync(this.idPelada);
-        
-        await Navigation.PushAsync(new ListaTimes(idPelada, lista));
+        if(lista == null)
+        {
+            await DisplayAlert("Erro", "Quantidade de jogdores na lista insuficiente !", "Confirmar");
+        }
+        else
+        {
+            await Navigation.PushAsync(new ListaTimes(idPelada, lista));
+
+        }
 
     }
 
-
+	
     public async void ListaJogadore()
     {
         Jogador jogador = new Jogador();
