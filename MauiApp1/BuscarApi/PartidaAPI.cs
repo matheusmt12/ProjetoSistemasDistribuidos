@@ -21,9 +21,10 @@ namespace BuscarApi
             var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
             var response = await _httpClient.PostAsync("/api/Partidada", content);
             string resposta = await response.Content.ReadAsStringAsync();
-            DadosPartida respostaReceive = Newtonsoft.Json.JsonConvert.DeserializeObject<DadosPartida>(resposta);
+           
             if (response.IsSuccessStatusCode)
             {
+                DadosPartida respostaReceive = Newtonsoft.Json.JsonConvert.DeserializeObject<DadosPartida>(resposta);
                 return respostaReceive;
             }
             return null;

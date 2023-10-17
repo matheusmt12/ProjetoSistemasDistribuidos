@@ -12,7 +12,7 @@ public partial class Partida : ContentPage
     private bool partidaCriada;
     private DadosPartida dadosPartida;
     private readonly List<TimeJogadores>  _lista = new List<TimeJogadores>();
-    private TimeJogadores timeVencedor;
+    private int timeVencedor;
     Queue<int> fila = new Queue<int>();
     private int casa = 0,fora = 0;
     //private int fora
@@ -50,14 +50,17 @@ public partial class Partida : ContentPage
         }
         idFora = _lista[sorteio].idTime;
         idCasa = _lista[idCasa].idTime;
-        foreach(var t in _lista)
+
+        if (_lista.Count() > 2)
         {
-            if(t.idTime !=  idCasa || t.idTime != idFora)
+            foreach (var t in _lista)
             {
-                fila.Enqueue(t.idTime);
+                if (t.idTime != idCasa && t.idTime != idFora)
+                {
+                    fila.Enqueue(t.idTime);
+                }
             }
-        }   
-        
+        }
         PartidaAPI partidaAPI = new PartidaAPI();
         dadosPartida = new DadosPartida
         {
@@ -90,9 +93,9 @@ public partial class Partida : ContentPage
         int Tfora;
         dadosPartida.PlacarTimeCasa = (string)casa.ToString();
         await partidaAPI.PutPartida(dadosPartida);
-        Tcasa = _lista.Where(g => g.nomeDoTime == time1.Text).Select(g => g.idTime).FirstOrDefault();
+        this.timeVencedor = _lista.Where(g => g.nomeDoTime == time1.Text).Select(g => g.idTime).FirstOrDefault();
         Tfora = _lista.Where(g => g.nomeDoTime == time2.Text).Select(g => g.idTime).FirstOrDefault();
-        string nomeTime1 = _lista.FirstOrDefault(g => g.idTime == Tcasa)?.nomeDoTime;
+        string nomeTime1 = _lista.FirstOrDefault(g => g.idTime == this.timeVencedor)?.nomeDoTime;
         string nomeTime2 = _lista.FirstOrDefault(g => g.idTime == Tfora)?.nomeDoTime;
         Device.BeginInvokeOnMainThread(() =>
         {
@@ -111,9 +114,9 @@ public partial class Partida : ContentPage
         int Tfora;
         dadosPartida.PlacarTimeFora =(string)fora.ToString();
         await partidaAPI.PutPartida(dadosPartida);
-        Tcasa = _lista.Where(g => g.nomeDoTime == time1.Text).Select(g => g.idTime).FirstOrDefault();
+        this.timeVencedor = _lista.Where(g => g.nomeDoTime == time1.Text).Select(g => g.idTime).FirstOrDefault();
         Tfora = _lista.Where(g => g.nomeDoTime == time2.Text).Select(g => g.idTime).FirstOrDefault();
-        string nomeTime1 = _lista.FirstOrDefault(g => g.idTime == Tcasa)?.nomeDoTime;
+        string nomeTime1 = _lista.FirstOrDefault(g => g.idTime == this.timeVencedor)?.nomeDoTime;
         string nomeTime2 = _lista.FirstOrDefault(g => g.idTime == Tfora)?.nomeDoTime;
         Device.BeginInvokeOnMainThread(() =>
         {
@@ -145,41 +148,55 @@ public partial class Partida : ContentPage
         // crinado nova partida
         int idFora = 0;
         int idCasa = 0;
-        if (int.Parse(placarT1.Text) > int.Parse(placarT2.Text))
-        {
-            //o time ue perdeu vai para, 
-            //quem
-            fila.Enqueue(_lista.Where(g => g.nomeDoTime == time2.Text).Select(g => g.idTime).FirstOrDefault());
-            idCasa = _lista.Where(g => g.nomeDoTime == time1.Text).Select(g => g.idTime).FirstOrDefault();
-            idFora = fila.Dequeue();
-            //this.timeVencedor.idTime = 
-        }
-        else if (int.Parse(placarT1.Text) == int.Parse(placarT2.Text))
-        {
-            fila.Enqueue(_lista.Where(g => g.nomeDoTime == time1.Text).Select(g => g.idTime).FirstOrDefault());
-            fila.Enqueue(_lista.Where(g => g.nomeDoTime == time2.Text).Select(g => g.idTime).FirstOrDefault());
-            idCasa = fila.Dequeue();
-            idFora = fila.Dequeue();
+        if(_lista.Count() > 2 ){
+            if (int.Parse(placarT1.Text) > int.Parse(placarT2.Text))
+            {
+                //o time ue perdeu vai para, 
+                //quem
+                fila.Enqueue(_lista.Where(g => g.nomeDoTime == time2.Text).Select(g => g.idTime).FirstOrDefault());
+                //idCasa = _lista.Where(g => g.nomeDoTime == time1.Text).Select(g => g.idTime).FirstOrDefault();
+                idFora = fila.Dequeue();
+                this.timeVencedor = _lista.Where(g => g.nomeDoTime == time1.Text).Select(g => g.idTime).FirstOrDefault();
+            }
+            else if (int.Parse(placarT1.Text) == int.Parse(placarT2.Text))
+            {
+         
+                
+                    fila.Enqueue(_lista.Where(g => g.nomeDoTime == time1.Text).Select(g => g.idTime).FirstOrDefault());
+                    fila.Enqueue(_lista.Where(g => g.nomeDoTime == time2.Text).Select(g => g.idTime).FirstOrDefault());
+                    this.timeVencedor = fila.Dequeue();
+                    idFora = fila.Dequeue();
+         
+
+            }
+            else
+            {
+                fila.Enqueue(_lista.Where(g => g.nomeDoTime == time1.Text).Select(g => g.idTime).FirstOrDefault());
+                //idCasa = _lista.Where(g => g.nomeDoTime == time2.Text).Select(g => g.idTime).FirstOrDefault();
+                idFora = fila.Dequeue();
+                this.timeVencedor = _lista.Where(g => g.nomeDoTime == time2.Text).Select(g => g.idTime).FirstOrDefault();
+            }
+
         }
         else
         {
-            fila.Enqueue(_lista.Where(g => g.nomeDoTime == time1.Text).Select(g => g.idTime).FirstOrDefault());
-            idCasa = _lista.Where(g => g.nomeDoTime == time2.Text).Select(g => g.idTime).FirstOrDefault();
-            idFora = fila.Dequeue();
+            this.timeVencedor = _lista.Where(g => g.nomeDoTime == time1.Text).Select(g => g.idTime).FirstOrDefault();
+            idFora = _lista.Where(g => g.nomeDoTime == time2.Text).Select(g => g.idTime).FirstOrDefault();
         }
-
-
         dadosPartida = new DadosPartida
         {
             InicioPartida = true,
             PlacarTimeCasa = "0",
             PlacarTimeFora = "0",
-            TempoDePartida =  "--",
-            TimeIdTimeCasa = idCasa,
+            TempoDePartida = "--",
+            TimeIdTimeCasa = this.timeVencedor,
             TimeIdTimeFora = idFora,
             Status = false
         };
-        string nomeTime1 = _lista.FirstOrDefault(g => g.idTime == idCasa)?.nomeDoTime;
+        stopwatch.Reset();
+        lblTimer.Text = "00:00:00";
+        isRunning = false;
+        string nomeTime1 = _lista.FirstOrDefault(g => g.idTime == this.timeVencedor)?.nomeDoTime;
         string nomeTime2 = _lista.FirstOrDefault(g => g.idTime == idFora)?.nomeDoTime;
         dadosPartida = await partidaAPI.PostPartida(dadosPartida);
         Device.BeginInvokeOnMainThread(() =>
