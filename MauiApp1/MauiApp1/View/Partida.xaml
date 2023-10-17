@@ -6,8 +6,11 @@
     <VerticalStackLayout>
 
 
-        <Label Text="Tempo 6:40 " />
-        <Label Text="Partida"/>
+        <StackLayout Padding="20">
+            <Label x:Name="lblTimer" FontSize="30" Text="00:00:00" HorizontalOptions="Center" />
+            <Button Text="Iniciar/Parar" Clicked="OnStartStopButtonClicked" />
+            <Button Text="Zerar" Clicked="OnResetButtonClicked" />
+        </StackLayout>
 
         <Button Text="Casa Marca"
                 x:Name="btnAlterarCasa"
@@ -29,6 +32,7 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
 
