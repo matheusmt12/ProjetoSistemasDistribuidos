@@ -55,8 +55,9 @@
 
 
         </Grid>
-        <!--<Button
-            Text="Atualizar pag"
-            Clicked="Atualizar"/>-->
+        <Button Text="Encerrar partida"
+                x:Name="btnEncerrarPartida"
+                Clicked="EncerrarPartida"
+        />
     </VerticalStackLayout>
 </ContentPage>
