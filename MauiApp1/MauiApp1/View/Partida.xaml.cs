@@ -34,7 +34,7 @@ public partial class Partida : ContentPage
 
     public async void CriarPartida()
     {
-        Stack<int> array = new Stack<int>();
+      
         int idCasa = 0;
         int idFora = 0;
 
@@ -113,14 +113,17 @@ public partial class Partida : ContentPage
 
     public async void EncerrarPartida(object sender, EventArgs e)
     {
+        int idTime = fila.Dequeue();
         //verificr quem ganhou
         //
         if (int.Parse(placarT1.Text) > int.Parse(placarT2.Text))
         {
+            //o time ue perdeu vai para, 
+            //quem
 
         }
 
-        int idTime = fila.Dequeue();
+      
         PartidaAPI partidaAPI = new PartidaAPI();
         dadosPartida = new DadosPartida
         {
