@@ -86,7 +86,11 @@ namespace APIPelada.Controllers
                 Sorteio sorteio = new Sorteio();
                 if (isTimes == 0)
                 {
+                    
                     List<Listajogador> listaJogador = _lista.GetAllJogadores(idPelada).ToList();
+                    if (pelada.QuantJogadorPorTime > listaJogador.Count()){
+                        return BadRequest("Quantidade de pessoas insuficiente");
+                    }
                     int quantidadeDeTimes = listaJogador.Count() / pelada.QuantJogadorPorTime;
                     string nomeDosTimes = "ABCDEFGHIJKLMNOPQRSTUVXWYZ";
 
