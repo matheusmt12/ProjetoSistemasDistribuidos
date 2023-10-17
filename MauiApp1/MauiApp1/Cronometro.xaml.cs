@@ -33,6 +33,7 @@ public partial class Cronometro : ContentPage
         if (isRunning)
         {
             stopwatch.Stop();
+            string s = stopwatch.Elapsed.ToString("hh\\:mm\\:ss");
         }
         else
         {
