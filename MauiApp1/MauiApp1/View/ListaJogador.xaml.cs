@@ -18,9 +18,18 @@ public partial class ListaJogador : ContentPage
     {
         TimeAPI timeAPI = new TimeAPI();
         List<TimeJogadores> lista = new List<TimeJogadores>();
+
         lista = await timeAPI.GetTeamsAsync(this.idPelada);
-        await Navigation.PushAsync(new ListaTimes(idPelada, lista));
-       
+        if(lista == null)
+        {
+            await DisplayAlert("Erro", "Quantidade de jogdores na lista insuficiente !", "Confirmar");
+        }
+        else
+        {
+            await Navigation.PushAsync(new ListaTimes(idPelada, lista));
+
+        }
+
     }
 
 	
@@ -29,9 +38,35 @@ public partial class ListaJogador : ContentPage
         Jogador jogador = new Jogador();
         List<BuscarApi.ListaJogador> list = new List<BuscarApi.ListaJogador>();
         list = await jogador.GetAllJogadores(_codPartida);
-        meuListView.ItemsSource = list;
+
+        foreach (var jogadores in list)
+        {
+            var stacklayout = new StackLayout
+            {
+                Spacing = 10,
+            };
+
+
+
+                var label = new Label
+                {
+
+                    Text = "Nome :   " + jogadores.Nome + "     Posição :   " + jogadores.Posicao
+                };
+                stacklayout.Children.Add(label);
+                TeamsFlexLayout.Children.Add(stacklayout);
+            
+
+
+
+        }
 
     }
 
 
+    private async void OnLabelClicked(object sender, EventArgs e)
+    {
+        TeamsFlexLayout.Children.Clear();
+        ListaJogadore();
+    }
 }

@@ -14,7 +14,7 @@
                         AlignContent="Start">
                 
             </FlexLayout>
-            <Button Text=" Gerear partida"
+            <Button Text=" Gerar partida"
                     Clicked="gerarPartida"/>
         </StackLayout>
 

@@ -21,9 +21,10 @@ namespace BuscarApi
             var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
             var response = await _httpClient.PostAsync("/api/Partidada", content);
             string resposta = await response.Content.ReadAsStringAsync();
-            DadosPartida respostaReceive = Newtonsoft.Json.JsonConvert.DeserializeObject<DadosPartida>(resposta);
+           
             if (response.IsSuccessStatusCode)
             {
+                DadosPartida respostaReceive = Newtonsoft.Json.JsonConvert.DeserializeObject<DadosPartida>(resposta);
                 return respostaReceive;
             }
             return null;
@@ -50,7 +51,8 @@ namespace BuscarApi
         public string PlacarTimeFora { get; set; } = string.Empty;
         public int TimeIdTimeFora { get; set; }
         public int TimeIdTimeCasa { get; set; }
-        public DateTime TempoDePartida { get; set; }
+        public string? TempoDePartida { get; set; }
         public bool? InicioPartida { get; set; }
+        public bool Status { get; set; }
     }
 }

@@ -35,6 +35,7 @@ public partial class CriarPartida : ContentPage
         dadosApi.Nome = nomePelada.Text;
         dadosApi.Data = dataPelada.Date;
         dadosApi.Local = nomeLocal.Text;
+        dadosApi.QuantJogadorPorTime = int.Parse(quantJogadores.Text);
         string receive = await dadosParaEnviar.PostDados(dadosApi);
         if (receive == "Sucesso")
         {

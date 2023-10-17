@@ -1,43 +1,36 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.View.ListaJogador"
              Title="ListaJogador">
-    
-    <ScrollView HorizontalOptions="Center">
-        <FlexLayout Direction="Column" >
-            <ListView x:Name="meuListView">
-                <!-- Defina a largura desejada aqui -->
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid VerticalOptions="Center"
-                                  HorizontalOptions="Center"
-                                  ColumnSpacing="10"
-                                  Padding="20"
-                                  RowSpacing="10">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition />
-                                    <ColumnDefinition />
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition />
-                                    <RowDefinition />
-                                </Grid.RowDefinitions>
-                                <StackLayout Orientation="Horizontal" Spacing="20">
-                                    <Label Text="Nome:"  TextColor="Blue"/>
-                                    <Label Text="{Binding Nome }" FontAttributes="Bold"  TextColor="Blue"/>
-                                    <Label Text="Posicao:" Grid.Column="0" Grid.Row="1" TextColor="Blue"/>
-                                    <Label Text="{Binding Posicao}"  TextColor="Blue"/>
-                                </StackLayout>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <Button  Text="Gerar Times"
-                 Clicked="GerarTimes"/>
-        </FlexLayout>
+    <ScrollView>
+        <StackLayout Padding="10">
+            <Frame CornerRadius="10"
+                   BorderColor="LightGray"
+                   BackgroundColor="#3498db"
+                   Padding="10,5"
+                   HasShadow="True"
+                   Margin="0,10">
+                <Label Text="Clique Aqui!"
+                       TextColor="White"
+                       FontSize="18"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontAttributes="Bold">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLabelClicked" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Frame>
+            <Button Text="Gerar Times"
+                    Clicked="GerarTimes"/>
+
+            <FlexLayout x:Name="TeamsFlexLayout"
+                        Direction="Column"
+                        AlignItems="Center"
+                        JustifyContent="Start"
+                        AlignContent="Center">
+                <!-- Adicione mais elementos ao FlexLayout se necessário -->
+            </FlexLayout>
+        </StackLayout>
     </ScrollView>
-    
 </ContentPage>
