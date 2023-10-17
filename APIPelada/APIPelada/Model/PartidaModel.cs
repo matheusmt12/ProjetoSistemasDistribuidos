@@ -9,5 +9,6 @@
         public int TimeIdTimeCasa { get; set; }
         public DateTime TempoDePartida { get; set; }
         public bool? InicioPartida { get; set; }
+        public bool Status { get; set; }
     }
 }

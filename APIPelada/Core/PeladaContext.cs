@@ -107,6 +107,10 @@ namespace Core
 
                 entity.Property(e => e.PlacarTimeFora).HasMaxLength(45);
 
+                entity.Property(e => e.TempoDePartida)
+                    .IsRequired()
+                    .HasMaxLength(45);
+
                 entity.Property(e => e.TimeIdTimeCasa).HasColumnName("Time_idTime_Casa");
 
                 entity.Property(e => e.TimeIdTimeFora).HasColumnName("Time_idTime_Fora");
