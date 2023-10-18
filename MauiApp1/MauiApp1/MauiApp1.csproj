@@ -81,12 +81,18 @@
 	  <MauiXaml Update="View\ListaJogador.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="View\Menu.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
       <MauiXaml Update="View\Partida.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
       <MauiXaml Update="View\ListaTimes.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+      <MauiXaml Update="View\PartidaEmAndamento.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
 	</ItemGroup>
 
 </Project>

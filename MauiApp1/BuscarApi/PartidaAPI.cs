@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,6 +41,21 @@ namespace BuscarApi
             return null;
         }
 
+        public async Task<List<DadosPartidaDTO>> GetPartidaEmAndamento()
+        {
+            List<DadosPartidaDTO> list = new List<DadosPartidaDTO>();
+            
+            var response =await  _httpClient.GetAsync("api/Partidada/PartidaEmAndamento");
+            if (response.IsSuccessStatusCode)
+            {
+                string content = await response.Content.ReadAsStringAsync();
+                list = JsonConvert.DeserializeObject<List<DadosPartidaDTO>>(content);
+                return list;
+                   
+            }
+            return null;
+        }
+
     }
 
 
@@ -51,6 +67,17 @@ namespace BuscarApi
         public string PlacarTimeFora { get; set; } = string.Empty;
         public int TimeIdTimeFora { get; set; }
         public int TimeIdTimeCasa { get; set; }
+        public string? TempoDePartida { get; set; }
+        public bool? InicioPartida { get; set; }
+        public bool Status { get; set; }
+    }
+
+    public class DadosPartidaDTO
+    {
+        public string PlacarTimeCasa { get; set; } = string.Empty;
+        public string PlacarTimeFora { get; set; } = string.Empty;
+        public string NomeTimeFora { get; set; }
+        public string NomeTimeCasa { get; set; }
         public string? TempoDePartida { get; set; }
         public bool? InicioPartida { get; set; }
         public bool Status { get; set; }

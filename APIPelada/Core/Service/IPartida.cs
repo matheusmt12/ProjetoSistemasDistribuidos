@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,9 @@ namespace Core.Service
     {
         Task<bool> Create(Partidum partidum);
         Task<bool> Update(Partidum partidum);
+
+        IEnumerable<PartidaDTO> GetAllPartidaEmAndamento();
+
+        IEnumerable<PartidaDTO> GetAllPartidaEmcerradas();
     }
 }

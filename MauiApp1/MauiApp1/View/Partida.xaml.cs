@@ -191,7 +191,7 @@ public partial class Partida : ContentPage
             TempoDePartida = "--",
             TimeIdTimeCasa = this.timeVencedor,
             TimeIdTimeFora = idFora,
-            Status = false
+            Status = true
         };
         stopwatch.Reset();
         lblTimer.Text = "00:00:00";

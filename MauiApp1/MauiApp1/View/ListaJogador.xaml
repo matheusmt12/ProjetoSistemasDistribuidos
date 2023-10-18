@@ -10,7 +10,7 @@
                    Padding="10,5"
                    HasShadow="True"
                    Margin="0,10">
-                <Label Text="Clique Aqui!"
+                <Label Text="Atualizar Lista!"
                        TextColor="White"
                        FontSize="18"
                        HorizontalOptions="Center"
