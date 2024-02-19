@@ -58,12 +58,10 @@ namespace BuscarApi
             return 0;
 
         }
-
-        public async Task<List<ListaJogador>> GetAllJogadores()
+        public async Task<List<ListaJogador>> GetAllJogadores(string codPartida)
         {
-
-            List<ListaJogador> list = new List<ListaJogador> ();
-            var response = await _httpCliente.GetAsync("api/ListaJogador");
+            List<ListaJogador> list;
+            var response = await _httpCliente.GetAsync($"api/ListaJogador/{codPartida}");
             if (response.IsSuccessStatusCode)
             {
                 string content = await response.Content.ReadAsStringAsync();
@@ -78,7 +76,6 @@ namespace BuscarApi
         }
 
     }
-
 
 
     public class JogadorObject

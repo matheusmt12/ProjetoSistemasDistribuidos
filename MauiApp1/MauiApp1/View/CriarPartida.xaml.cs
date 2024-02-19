@@ -4,15 +4,18 @@ namespace MauiApp1;
 
 public partial class CriarPartida : ContentPage
 {
-
-    public CriarPartida()
+    private int idJogador;
+    public CriarPartida(int idJogador)
     {
         InitializeComponent();
+        this.idJogador = idJogador;
     }
 
     private async void btnCriarPartida_Clicked(object sender, EventArgs e)
     {
         var dadosApi = new DadosApi();
+        ListaJogadorId listaJogador = new ListaJogadorId();
+        PeladaAPI pelada = new PeladaAPI();
         var dadosParaEnviar = new PeladaAPI();
         var criarJogador = new Jogador();
 
@@ -32,19 +35,29 @@ public partial class CriarPartida : ContentPage
         dadosApi.Nome = nomePelada.Text;
         dadosApi.Data = dataPelada.Date;
         dadosApi.Local = nomeLocal.Text;
+        dadosApi.QuantJogadorPorTime = int.Parse(quantJogadores.Text);
         string receive = await dadosParaEnviar.PostDados(dadosApi);
         if (receive == "Sucesso")
-            textoCodigoPartida.Text = receive + ": " + "O código da pelada é " + codigo;
+        {
+            listaJogador.jogadorIdJogador = idJogador;
+            listaJogador.peladaIdPelada = await dadosParaEnviar.GetPeladaByCod(codigo);
+            await DisplayAlert("Sucesso", "O código da pelada é " + codigo, "Confirmar");
 
+            if (await pelada.InsertJogadorInPelada(listaJogador) == "Sucesso")
+            {
+                await Navigation.PushAsync(new View.ListaJogador(listaJogador.peladaIdPelada,codigo));
+                
+            }
+        }
 
-       // JogadorObject jogador = new JogadorObject();
+        // JogadorObject jogador = new JogadorObject();
 
-       // jogador.CodigoTorneio = codigo;
-       // jogador.NomeJogador = nomeJogador.Text;
-       // jogador.Status = "Dono";
-       // jogador.PosicaoJogador = (string)pickerJogador.SelectedItem;
+        // jogador.CodigoTorneio = codigo;
+        // jogador.NomeJogador = nomeJogador.Text;
+        // jogador.Status = "Dono";
+        // jogador.PosicaoJogador = (string)pickerJogador.SelectedItem;
 
-       //await  criarJogador.PostDados(jogador);
+        //await  criarJogador.PostDados(jogador);
 
     }
 }

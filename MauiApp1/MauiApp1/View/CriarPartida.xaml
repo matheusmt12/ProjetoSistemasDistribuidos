@@ -75,7 +75,7 @@
                 />
             <Label Grid.Row="3"
                    Grid.Column="0"
-                   Text="Quantidade de Time"
+                   Text="Quant jogadores por time"
                    FontSize="20"
                 
                 />
@@ -83,7 +83,7 @@
             <Entry Grid.Row="3"
                    Grid.Column="1"
                    Placeholder="Quant. Time"
-                   x:Name="quantTime"
+                   x:Name="quantJogadores"
                 
                 
                 

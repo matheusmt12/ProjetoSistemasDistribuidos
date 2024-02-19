@@ -25,19 +25,31 @@ namespace APIPelada.Controllers
 
 
 
-        // GET: api/<PartidadaController>
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
+        //GET: api/<PartidadaController>
+        [HttpGet]
+        [Route("PartidaEmAndamento")]
+        public async Task<ActionResult> GetPartidaEmAndamento()
+        {
+            var partidas = _partida.GetAllPartidaEmAndamento();
+            if(partidas != null) { return Ok(partidas); }
+            return BadRequest("Nunhuma Partida Esta em amdamento ");
+        }
 
-        //// GET api/<PartidadaController>/5
-        //[HttpGet("{id}")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
+        [HttpGet]
+        [Route("PartidaEmcerradas")]
+        public async Task<ActionResult> GetPartidaEmcerradaa()
+        {
+            var partidas = _partida.GetAllPartidaEmcerradas();
+            if (partidas != null) { return Ok(partidas); }
+            return BadRequest("Nunhuma Partida Esta em amdamento ");
+        }
+
+        // GET api/<PartidadaController>/5
+        [HttpGet("{id}")]
+        public string Get(int id)
+        {
+            return "value";
+        }
 
         // POST api/<PartidadaController>
         [HttpPost]

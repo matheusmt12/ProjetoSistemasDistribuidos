@@ -22,12 +22,12 @@ public partial class CodigoPelada : ContentPage
 			string resposta = await pelada.InsertJogadorInPelada(addLista);
 			if(resposta == "Sucesso") {
                 await DisplayAlert("Sucesso", "Jogador Inserido na pelada!", "Confirmar");
-                await Navigation.PushAsync(new View.ListaJogador());
+                await Navigation.PushAsync(new View.Menu(idPelada, codPelada.Text));
             }
 			else if(resposta == "OK")
 			{
                 await DisplayAlert("Sucesso",resposta, "Confirmar");
-				await Navigation.PushAsync(new View.ListaJogador());
+				await Navigation.PushAsync(new View.Menu(idPelada, codPelada.Text));
             }
 		}
 		else
@@ -39,11 +39,6 @@ public partial class CodigoPelada : ContentPage
 
     public async void CriarPelada(object sender, EventArgs e)
 	{
-		await Navigation.PushAsync(new CriarPartida());
-	}
-
-	public async void TesteCriarPartida(object sender,EventArgs e)
-	{
-		await Navigation.PushAsync(new Partida());
+		await Navigation.PushAsync(new CriarPartida(idJogador));
 	}
 }

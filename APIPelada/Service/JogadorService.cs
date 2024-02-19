@@ -76,5 +76,13 @@ namespace Service
                 return null;
             }
         }
+
+        public string GetNomeJogador(int idJogador)
+        {
+            string nome = _context.Jogadors.Where(g => g.IdJogador == idJogador)
+                .Select(g => g.NomeJogador)
+                .FirstOrDefault();
+            return nome;
+        }
     }
 }

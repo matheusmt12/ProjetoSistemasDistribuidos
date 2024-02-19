@@ -4,24 +4,69 @@ namespace MauiApp1.View;
 
 public partial class ListaJogador : ContentPage
 {
-	public ListaJogador()
-	{
-
+    protected int idPelada;
+    protected string _codPartida;
+    public ListaJogador(int idPelada, string codPartida)
+    {
+        this.idPelada = idPelada;
         InitializeComponent();
-        TesteList();
+
+        _codPartida = codPartida;
+        ListaJogadore();
+    }
+    private async void GerarTimes(object sender, EventArgs e)
+    {
+        TimeAPI timeAPI = new TimeAPI();
+        List<TimeJogadores> lista = new List<TimeJogadores>();
+
+        lista = await timeAPI.GetTeamsAsync(this.idPelada);
+        if(lista == null)
+        {
+            await DisplayAlert("Erro", "Quantidade de jogdores na lista insuficiente !", "Confirmar");
+        }
+        else
+        {
+            await Navigation.PushAsync(new ListaTimes(idPelada, lista));
+
+        }
+
+    }
+
+	
+    public async void ListaJogadore()
+    {
+        Jogador jogador = new Jogador();
+        List<BuscarApi.ListaJogador> list = new List<BuscarApi.ListaJogador>();
+        list = await jogador.GetAllJogadores(_codPartida);
+
+        foreach (var jogadores in list)
+        {
+            var stacklayout = new StackLayout
+            {
+                Spacing = 10,
+            };
+
+
+
+                var label = new Label
+                {
+
+                    Text = "Nome :   " + jogadores.Nome + "     Posição :   " + jogadores.Posicao
+                };
+                stacklayout.Children.Add(label);
+                TeamsFlexLayout.Children.Add(stacklayout);
+            
+
+
+
+        }
+
     }
 
 
-
-    public async void TesteList()
-	{
-		
-		List<BuscarApi.ListaJogador> lista = new List<BuscarApi.ListaJogador>();
-
-		Jogador jogador = new Jogador();
-
-		lista = await jogador.GetAllJogadores();
-
-		meuListView.ItemsSource = lista;
-	}
+    private async void OnLabelClicked(object sender, EventArgs e)
+    {
+        TeamsFlexLayout.Children.Clear();
+        ListaJogadore();
+    }
 }

@@ -87,5 +87,6 @@ public class DadosApi
     public DateTime? Data { get; set; }
     public string CodigoPelada { get; set; }
     public string Local { get; set; }
+    public int QuantJogadorPorTime { get; set; }
 
 }
